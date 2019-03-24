@@ -7,21 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B280AFB2247A5F300E937DA /* UserChatListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B280AFA2247A5F300E937DA /* UserChatListController.swift */; };
+		4B280AFD2247A60400E937DA /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B280AFC2247A60400E937DA /* Chat.storyboard */; };
+		4B280AFF2247A65B00E937DA /* ChatLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B280AFE2247A65B00E937DA /* ChatLogController.swift */; };
+		4B280B012247A70F00E937DA /* ChatCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B280B002247A70F00E937DA /* ChatCoordinator.swift */; };
+		4B55D7FD22466CCB00364295 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55D7FC22466CCB00364295 /* Router.swift */; };
+		4B55D7FF22466CE400364295 /* ModalNavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55D7FE22466CE400364295 /* ModalNavigationRouter.swift */; };
+		4B55D80F2246CAA300364295 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55D80E2246CAA300364295 /* AuthCoordinator.swift */; };
+		4B55D8112246CC0300364295 /* AppDelegateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55D8102246CC0300364295 /* AppDelegateRouter.swift */; };
+		4B55D8132246CE7E00364295 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55D8122246CE7E00364295 /* RegisterController.swift */; };
+		4B55D8152246D37C00364295 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55D8142246D37C00364295 /* NavigationRouter.swift */; };
 		4BC67935224586CB0006236E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC67934224586CB0006236E /* AppDelegate.swift */; };
-		4BC67937224586CB0006236E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC67936224586CB0006236E /* ViewController.swift */; };
-		4BC6793A224586CB0006236E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC67938224586CB0006236E /* Main.storyboard */; };
+		4BC6793A224586CB0006236E /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC67938224586CB0006236E /* Auth.storyboard */; };
 		4BC6793C224586CD0006236E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BC6793B224586CD0006236E /* Assets.xcassets */; };
 		4BC6793F224586CD0006236E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC6793D224586CD0006236E /* LaunchScreen.storyboard */; };
+		4BC679482245923B0006236E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC679472245923B0006236E /* Coordinator.swift */; };
+		4BC6794D224597430006236E /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC6794C224597430006236E /* LoginController.swift */; };
+		4BC6795322459E990006236E /* StoryboardIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC6795222459E990006236E /* StoryboardIdentifiable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B280AFA2247A5F300E937DA /* UserChatListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserChatListController.swift; sourceTree = "<group>"; };
+		4B280AFC2247A60400E937DA /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
+		4B280AFE2247A65B00E937DA /* ChatLogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogController.swift; sourceTree = "<group>"; };
+		4B280B002247A70F00E937DA /* ChatCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCoordinator.swift; sourceTree = "<group>"; };
+		4B55D7FC22466CCB00364295 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		4B55D7FE22466CE400364295 /* ModalNavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalNavigationRouter.swift; sourceTree = "<group>"; };
+		4B55D80E2246CAA300364295 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		4B55D8102246CC0300364295 /* AppDelegateRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateRouter.swift; sourceTree = "<group>"; };
+		4B55D8122246CE7E00364295 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
+		4B55D8142246D37C00364295 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
 		4BC67931224586CB0006236E /* LingoChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LingoChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC67934224586CB0006236E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4BC67936224586CB0006236E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4BC67939224586CB0006236E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4BC67939224586CB0006236E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Auth.storyboard; sourceTree = "<group>"; };
 		4BC6793B224586CD0006236E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4BC6793E224586CD0006236E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4BC67940224586CD0006236E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BC679472245923B0006236E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		4BC6794C224597430006236E /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		4BC6795222459E990006236E /* StoryboardIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardIdentifiable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +59,96 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B280AF72247A5C100E937DA /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				4B280AF82247A5C700E937DA /* Controllers */,
+				4B280AF92247A5CD00E937DA /* Views */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		4B280AF82247A5C700E937DA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4B280AFA2247A5F300E937DA /* UserChatListController.swift */,
+				4B280AFE2247A65B00E937DA /* ChatLogController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		4B280AF92247A5CD00E937DA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4B280AFC2247A60400E937DA /* Chat.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4B55D7FB22466CC000364295 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				4B55D7FC22466CCB00364295 /* Router.swift */,
+				4B55D8142246D37C00364295 /* NavigationRouter.swift */,
+				4B55D7FE22466CE400364295 /* ModalNavigationRouter.swift */,
+				4B55D8102246CC0300364295 /* AppDelegateRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		4B55D8082246C4B200364295 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				4BC67934224586CB0006236E /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		4B55D8092246C4C300364295 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				4B280AF72247A5C100E937DA /* Chat */,
+				4B55D80D2246CA1A00364295 /* Authentication */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		4B55D80A2246C4E500364295 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4BC6793B224586CD0006236E /* Assets.xcassets */,
+				4BC67940224586CD0006236E /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4B55D80B2246CA0200364295 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4BC6794C224597430006236E /* LoginController.swift */,
+				4B55D8122246CE7E00364295 /* RegisterController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		4B55D80C2246CA0700364295 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4BC67938224586CB0006236E /* Auth.storyboard */,
+				4BC6793D224586CD0006236E /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4B55D80D2246CA1A00364295 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				4B55D80B2246CA0200364295 /* Controllers */,
+				4B55D80C2246CA0700364295 /* Views */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
 		4BC67928224586CB0006236E = {
 			isa = PBXGroup;
 			children = (
@@ -54,14 +168,32 @@
 		4BC67933224586CB0006236E /* LingoChat */ = {
 			isa = PBXGroup;
 			children = (
-				4BC67934224586CB0006236E /* AppDelegate.swift */,
-				4BC67936224586CB0006236E /* ViewController.swift */,
-				4BC67938224586CB0006236E /* Main.storyboard */,
-				4BC6793B224586CD0006236E /* Assets.xcassets */,
-				4BC6793D224586CD0006236E /* LaunchScreen.storyboard */,
-				4BC67940224586CD0006236E /* Info.plist */,
+				4B55D8082246C4B200364295 /* App */,
+				4BC6795122459E7F0006236E /* Storyboard */,
+				4BC67946224592300006236E /* Coordinators */,
+				4B55D7FB22466CC000364295 /* Routers */,
+				4B55D8092246C4C300364295 /* Screens */,
+				4B55D80A2246C4E500364295 /* Resources */,
 			);
 			path = LingoChat;
+			sourceTree = "<group>";
+		};
+		4BC67946224592300006236E /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				4BC679472245923B0006236E /* Coordinator.swift */,
+				4B55D80E2246CAA300364295 /* AuthCoordinator.swift */,
+				4B280B002247A70F00E937DA /* ChatCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		4BC6795122459E7F0006236E /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				4BC6795222459E990006236E /* StoryboardIdentifiable.swift */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,7 +256,8 @@
 			files = (
 				4BC6793F224586CD0006236E /* LaunchScreen.storyboard in Resources */,
 				4BC6793C224586CD0006236E /* Assets.xcassets in Resources */,
-				4BC6793A224586CB0006236E /* Main.storyboard in Resources */,
+				4B280AFD2247A60400E937DA /* Chat.storyboard in Resources */,
+				4BC6793A224586CB0006236E /* Auth.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,20 +268,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BC67937224586CB0006236E /* ViewController.swift in Sources */,
+				4B55D7FD22466CCB00364295 /* Router.swift in Sources */,
+				4BC6794D224597430006236E /* LoginController.swift in Sources */,
+				4B280B012247A70F00E937DA /* ChatCoordinator.swift in Sources */,
+				4B55D80F2246CAA300364295 /* AuthCoordinator.swift in Sources */,
+				4BC6795322459E990006236E /* StoryboardIdentifiable.swift in Sources */,
 				4BC67935224586CB0006236E /* AppDelegate.swift in Sources */,
+				4BC679482245923B0006236E /* Coordinator.swift in Sources */,
+				4B55D7FF22466CE400364295 /* ModalNavigationRouter.swift in Sources */,
+				4B55D8112246CC0300364295 /* AppDelegateRouter.swift in Sources */,
+				4B55D8152246D37C00364295 /* NavigationRouter.swift in Sources */,
+				4B280AFB2247A5F300E937DA /* UserChatListController.swift in Sources */,
+				4B280AFF2247A65B00E937DA /* ChatLogController.swift in Sources */,
+				4B55D8132246CE7E00364295 /* RegisterController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4BC67938224586CB0006236E /* Main.storyboard */ = {
+		4BC67938224586CB0006236E /* Auth.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				4BC67939224586CB0006236E /* Base */,
 			);
-			name = Main.storyboard;
+			name = Auth.storyboard;
 			sourceTree = "<group>";
 		};
 		4BC6793D224586CD0006236E /* LaunchScreen.storyboard */ = {
@@ -284,7 +428,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 847623UFJR;
-				INFOPLIST_FILE = LingoChat/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/LingoChat/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +446,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 847623UFJR;
-				INFOPLIST_FILE = LingoChat/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/LingoChat/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

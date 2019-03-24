@@ -8,11 +8,14 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
-
+    // MARK: - Instance Properties
+    public lazy var coordinator = AuthCoordinator(router: router)
+    public lazy var router = AppDelegateRouter(window: window!)
+    public lazy var window: UIWindow? = UIWindow(frame: UIScreen.main.bounds)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        coordinator.present(animated: true, onDismissed: nil)
         return true
     }
 

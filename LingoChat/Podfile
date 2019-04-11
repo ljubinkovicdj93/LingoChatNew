@@ -7,4 +7,5 @@ target 'LingoChat' do
 
   # Pods for LingoChat
   pod 'Bond'
+  pod 'Alamofire'
 end

@@ -43,16 +43,41 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="XyM-bN-wh9">
+                                <rect key="frame" x="47" y="244.5" width="281" height="76"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email@example.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R6t-PI-syo">
+                                        <rect key="frame" x="0.0" y="0.0" width="281" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DI5-2p-lWg">
+                                        <rect key="frame" x="0.0" y="46" width="281" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="XyM-bN-wh9" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="3p2-h2-8nJ"/>
+                            <constraint firstItem="utY-XC-VA7" firstAttribute="top" secondItem="XyM-bN-wh9" secondAttribute="bottom" constant="8" id="6e0-9z-EhO"/>
                             <constraint firstItem="76h-7q-fEU" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="6yt-dp-Hdp"/>
+                            <constraint firstItem="XyM-bN-wh9" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.75" id="MJw-gY-SRz"/>
                             <constraint firstItem="utY-XC-VA7" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Q35-aO-at3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="76h-7q-fEU" secondAttribute="bottom" constant="15" id="abM-Sa-ZhR"/>
                             <constraint firstItem="utY-XC-VA7" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="yhy-Al-A9p"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="R6t-PI-syo" id="ZFu-nj-qJJ"/>
+                        <outlet property="loginButton" destination="utY-XC-VA7" id="v0t-Jq-mvc"/>
+                        <outlet property="passwordTextField" destination="DI5-2p-lWg" id="qoP-IG-V1z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -126,10 +151,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IbZ-Ta-jDf"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="9lA-LC-4u2" id="dax-eX-bhQ"/>
+                        <outlet property="passwordTextField" destination="eQJ-BT-Am1" id="W4R-ED-cbL"/>
+                        <outlet property="registerButton" destination="nHe-74-vzd" id="b7y-ix-bOC"/>
+                        <outlet property="usernameTextField" destination="hSj-xk-eAn" id="OCJ-lb-cWO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zjv-F8-wMm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="669.60000000000002" y="880.20989505247383"/>
+            <point key="canvasLocation" x="-23" y="827"/>
         </scene>
     </scenes>
 </document>

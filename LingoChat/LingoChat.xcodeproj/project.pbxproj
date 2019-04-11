@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B1A7AD5225F3B48000F7F77 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1A7AD4225F3B48000F7F77 /* User.swift */; };
 		4B280AFB2247A5F300E937DA /* UserChatListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B280AFA2247A5F300E937DA /* UserChatListController.swift */; };
 		4B280AFD2247A60400E937DA /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B280AFC2247A60400E937DA /* Chat.storyboard */; };
 		4B280AFF2247A65B00E937DA /* ChatLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B280AFE2247A65B00E937DA /* ChatLogController.swift */; };
@@ -17,6 +18,7 @@
 		4B55D8112246CC0300364295 /* AppDelegateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55D8102246CC0300364295 /* AppDelegateRouter.swift */; };
 		4B55D8132246CE7E00364295 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55D8122246CE7E00364295 /* RegisterController.swift */; };
 		4B55D8152246D37C00364295 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55D8142246D37C00364295 /* NavigationRouter.swift */; };
+		4BB3BC27225F5B1600DF944E /* FieldValidationRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB3BC26225F5B1600DF944E /* FieldValidationRepresentable.swift */; };
 		4BC67935224586CB0006236E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC67934224586CB0006236E /* AppDelegate.swift */; };
 		4BC6793A224586CB0006236E /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC67938224586CB0006236E /* Auth.storyboard */; };
 		4BC6793C224586CD0006236E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BC6793B224586CD0006236E /* Assets.xcassets */; };
@@ -28,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B1A7AD4225F3B48000F7F77 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4B280AFA2247A5F300E937DA /* UserChatListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserChatListController.swift; sourceTree = "<group>"; };
 		4B280AFC2247A60400E937DA /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		4B280AFE2247A65B00E937DA /* ChatLogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogController.swift; sourceTree = "<group>"; };
@@ -38,6 +41,7 @@
 		4B55D8102246CC0300364295 /* AppDelegateRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateRouter.swift; sourceTree = "<group>"; };
 		4B55D8122246CE7E00364295 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		4B55D8142246D37C00364295 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
+		4BB3BC26225F5B1600DF944E /* FieldValidationRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldValidationRepresentable.swift; sourceTree = "<group>"; };
 		4BC67931224586CB0006236E /* LingoChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LingoChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC67934224586CB0006236E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BC67939224586CB0006236E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Auth.storyboard; sourceTree = "<group>"; };
@@ -64,6 +68,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B1A7AD3225F3B37000F7F77 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4B1A7AD4225F3B48000F7F77 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		4B280AF72247A5C100E937DA /* Chat */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,10 +160,19 @@
 		4B55D80D2246CA1A00364295 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				4BB3BC25225F5B0200DF944E /* Helpers */,
 				4B55D80B2246CA0200364295 /* Controllers */,
 				4B55D80C2246CA0700364295 /* Views */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		4BB3BC25225F5B0200DF944E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4BB3BC26225F5B1600DF944E /* FieldValidationRepresentable.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		4BC67928224586CB0006236E = {
@@ -176,11 +197,12 @@
 			isa = PBXGroup;
 			children = (
 				4B55D8082246C4B200364295 /* App */,
-				4BC6795122459E7F0006236E /* Storyboard */,
 				4BC67946224592300006236E /* Coordinators */,
+				4B1A7AD3225F3B37000F7F77 /* Models */,
+				4B55D80A2246C4E500364295 /* Resources */,
 				4B55D7FB22466CC000364295 /* Routers */,
 				4B55D8092246C4C300364295 /* Screens */,
-				4B55D80A2246C4E500364295 /* Resources */,
+				4BC6795122459E7F0006236E /* Storyboard */,
 			);
 			path = LingoChat;
 			sourceTree = "<group>";
@@ -351,10 +373,12 @@
 				4B55D80F2246CAA300364295 /* AuthCoordinator.swift in Sources */,
 				4BC6795322459E990006236E /* StoryboardIdentifiable.swift in Sources */,
 				4BC67935224586CB0006236E /* AppDelegate.swift in Sources */,
+				4B1A7AD5225F3B48000F7F77 /* User.swift in Sources */,
 				4BC679482245923B0006236E /* Coordinator.swift in Sources */,
 				4B55D7FF22466CE400364295 /* ModalNavigationRouter.swift in Sources */,
 				4B55D8112246CC0300364295 /* AppDelegateRouter.swift in Sources */,
 				4B55D8152246D37C00364295 /* NavigationRouter.swift in Sources */,
+				4BB3BC27225F5B1600DF944E /* FieldValidationRepresentable.swift in Sources */,
 				4B280AFB2247A5F300E937DA /* UserChatListController.swift in Sources */,
 				4B280AFF2247A65B00E937DA /* ChatLogController.swift in Sources */,
 				4B55D8132246CE7E00364295 /* RegisterController.swift in Sources */,

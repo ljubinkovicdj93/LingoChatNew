@@ -24,6 +24,7 @@
 		4BC679482245923B0006236E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC679472245923B0006236E /* Coordinator.swift */; };
 		4BC6794D224597430006236E /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC6794C224597430006236E /* LoginController.swift */; };
 		4BC6795322459E990006236E /* StoryboardIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC6795222459E990006236E /* StoryboardIdentifiable.swift */; };
+		EBBD6082A94BB24EABD1EE45 /* Pods_LingoChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A0D220B0D3CF256CE38487 /* Pods_LingoChat.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,9 @@
 		4BC679472245923B0006236E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		4BC6794C224597430006236E /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		4BC6795222459E990006236E /* StoryboardIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardIdentifiable.swift; sourceTree = "<group>"; };
+		A48C09BC670132AB4BBF89A1 /* Pods-LingoChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LingoChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-LingoChat/Pods-LingoChat.release.xcconfig"; sourceTree = "<group>"; };
+		C3A0D220B0D3CF256CE38487 /* Pods_LingoChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LingoChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5485BEAC418927F278783B0 /* Pods-LingoChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LingoChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LingoChat/Pods-LingoChat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBBD6082A94BB24EABD1EE45 /* Pods_LingoChat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +159,8 @@
 			children = (
 				4BC67933224586CB0006236E /* LingoChat */,
 				4BC67932224586CB0006236E /* Products */,
+				9AEF19A03474AB32784A6292 /* Pods */,
+				6D19815DF6688FCF2B9B917C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -196,6 +203,23 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
+		6D19815DF6688FCF2B9B917C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C3A0D220B0D3CF256CE38487 /* Pods_LingoChat.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9AEF19A03474AB32784A6292 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C5485BEAC418927F278783B0 /* Pods-LingoChat.debug.xcconfig */,
+				A48C09BC670132AB4BBF89A1 /* Pods-LingoChat.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -203,9 +227,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4BC67943224586CD0006236E /* Build configuration list for PBXNativeTarget "LingoChat" */;
 			buildPhases = (
+				5A4535D45AFC0A5B2ECD6772 /* [CP] Check Pods Manifest.lock */,
 				4BC6792D224586CB0006236E /* Sources */,
 				4BC6792E224586CB0006236E /* Frameworks */,
 				4BC6792F224586CB0006236E /* Resources */,
+				D55E4869D6879D44F1546591 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -262,6 +288,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5A4535D45AFC0A5B2ECD6772 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LingoChat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D55E4869D6879D44F1546591 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LingoChat/Pods-LingoChat-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bond/Bond.framework",
+				"${BUILT_PRODUCTS_DIR}/Differ/Differ.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveKit/ReactiveKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bond.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differ.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LingoChat/Pods-LingoChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4BC6792D224586CB0006236E /* Sources */ = {
@@ -424,6 +501,7 @@
 		};
 		4BC67944224586CD0006236E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5485BEAC418927F278783B0 /* Pods-LingoChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -442,6 +520,7 @@
 		};
 		4BC67945224586CD0006236E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A48C09BC670132AB4BBF89A1 /* Pods-LingoChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

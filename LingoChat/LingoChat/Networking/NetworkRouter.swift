@@ -34,6 +34,12 @@ struct NetworkRouter: URLRouter {
         var urlParams: String!
     }
     
+    struct RegisterRouter: Creatable {
+        #warning("TODO: change to users/register")
+        var route: String = "users"
+        var urlParams: String!
+    }
+    
     struct MessageRouter: Creatable, Readable, Deletable, Updatable {
         var route: String = "messages"
         var urlParams: String!

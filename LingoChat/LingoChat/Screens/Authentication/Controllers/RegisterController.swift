@@ -8,11 +8,13 @@ import Bond
 import ReactiveKit
 
 protocol RegisterControllerDelegate: class {
-    func registerControllerDidPressRegister(_ viewController: RegisterController)
+    func registerControllerDidPressRegister(_ viewController: RegisterController, with userData: User)
     func registerControllerDidPressCancel(_ viewController: RegisterController)
 }
 
 class RegisterController: UIViewController {
+    @IBOutlet weak var firstNameTextField: UITextField!
+    @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -28,18 +30,36 @@ class RegisterController: UIViewController {
     }
     
     private func addObservers() {
-        combineLatest(usernameTextField.reactive.text,
+        combineLatest(firstNameTextField.reactive.text,
+                      lastNameTextField.reactive.text,
+                      usernameTextField.reactive.text,
                       emailTextField.reactive.text,
-                      passwordTextField.reactive.text) { [weak self] (username, email, password) -> Bool in
+                      passwordTextField.reactive.text) { [weak self] (firstName, lastName, username, email, password) -> Bool in
             guard let self = self else { return false }
-            return self.isValidUsername(username) && self.isValidEmail(email) && self.isValidPassword(password)
+            return self.isTextFieldNonEmpty(firstName)
+                && self.isTextFieldNonEmpty(lastName)
+                && self.isTextFieldNonEmpty(username)
+                && self.isValidEmail(email)
+                && self.isValidPassword(password)
             }
             .bind(to: registerButton.reactive.isEnabled)
     }
     
     // MARK: - Actions
     @IBAction func registerTapped(_ sender: Any) {
-        delegate?.registerControllerDidPressRegister(self)
+        guard let firstName = firstNameTextField.text,
+            let lastName = lastNameTextField.text,
+            let username = usernameTextField.text,
+            let email = emailTextField.text,
+            let password = passwordTextField.text
+        else { return }
+        
+        let user = User(firstName: firstName,
+                        lastName: lastName,
+                        email: email,
+                        password: password,
+                        username: username)
+        delegate?.registerControllerDidPressRegister(self, with: user)
     }
     
     @IBAction func goBackTapped(_ sender: Any) {
@@ -47,12 +67,7 @@ class RegisterController: UIViewController {
     }
 }
 
-extension RegisterController: FieldValidationRepresentable {
-    func isValidUsername(_ usernameText: String?) -> Bool {
-        guard let username = usernameText else { return false }
-        return username.count > 0
-    }
-}
+extension RegisterController: FieldValidationRepresentable {}
 
 extension RegisterController {
     class func instantiate(delegate: RegisterControllerDelegate) -> RegisterController {

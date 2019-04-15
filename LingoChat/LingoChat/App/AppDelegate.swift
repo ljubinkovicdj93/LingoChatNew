@@ -9,7 +9,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: - Instance Properties
-    public lazy var coordinator = LoginCoordinator(router: router, networkService: netService)
+    public lazy var coordinator = AuthenticationCoordinator(router: router, networkService: netService)
     public lazy var router = AppDelegateRouter(window: window!)
     public lazy var netService = AnyNetworkService(LoginService())
     public lazy var window: UIWindow? = UIWindow(frame: UIScreen.main.bounds)

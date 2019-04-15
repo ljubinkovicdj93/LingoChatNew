@@ -60,6 +60,7 @@ extension NetworkService {
     }
     
     func sendNetworkRequest(_ req: RequestConverterProtocol, with completionHandler: @escaping ((Result<Model>) -> Void)) {
+                
         Alamofire.request(req).responseJSON { response in
 
             switch self.handleNetworkResponse(type: Model.self, response) {

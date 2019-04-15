@@ -6,13 +6,16 @@
 import Foundation
 
 protocol FieldValidationRepresentable {
-    func isValidUsername(_ usernameText: String?) -> Bool
+    func isTextFieldNonEmpty(_ textFieldText: String?) -> Bool
     func isValidPassword(_ passwordText: String?) -> Bool
     func isValidEmail(_ emailAddress: String?) -> Bool
 }
 
 extension FieldValidationRepresentable {
-    func isValidUsername(_ usernameText: String?) -> Bool { return false }
+    func isTextFieldNonEmpty(_ textFieldText: String?) -> Bool {
+        guard let text = textFieldText else { return false }
+        return text.count > 0
+    }
     
     func isValidEmail(_ emailAddress: String?) -> Bool {
         guard let email = emailAddress else { return false }

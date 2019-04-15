@@ -16,7 +16,7 @@
 		4B3E44F22260A3230085E0C5 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3E44F12260A3230085E0C5 /* LoginService.swift */; };
 		4B55D7FD22466CCB00364295 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55D7FC22466CCB00364295 /* Router.swift */; };
 		4B55D7FF22466CE400364295 /* ModalNavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55D7FE22466CE400364295 /* ModalNavigationRouter.swift */; };
-		4B55D80F2246CAA300364295 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55D80E2246CAA300364295 /* LoginCoordinator.swift */; };
+		4B55D80F2246CAA300364295 /* AuthenticationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55D80E2246CAA300364295 /* AuthenticationCoordinator.swift */; };
 		4B55D8112246CC0300364295 /* AppDelegateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55D8102246CC0300364295 /* AppDelegateRouter.swift */; };
 		4B55D8132246CE7E00364295 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55D8122246CE7E00364295 /* RegisterController.swift */; };
 		4B55D8152246D37C00364295 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55D8142246D37C00364295 /* NavigationRouter.swift */; };
@@ -24,7 +24,9 @@
 		4B784D64225F6FF000688C75 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B784D63225F6FF000688C75 /* RouterProtocol.swift */; };
 		4B784D66225F76F300688C75 /* ChildRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B784D65225F76F300688C75 /* ChildRouter.swift */; };
 		4B78521E225F844900688C75 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B78521D225F844900688C75 /* Token.swift */; };
-		4B982685226496F100F02591 /* DictionaryRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B982684226496F100F02591 /* DictionaryRepresentable.swift */; };
+		4B982685226496F100F02591 /* Encodable+asDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B982684226496F100F02591 /* Encodable+asDictionary.swift */; };
+		4B982687226498B000F02591 /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B982686226498B000F02591 /* RegisterService.swift */; };
+		4B98268A22649B1D00F02591 /* OptionalString+isNilOrEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B98268922649B1D00F02591 /* OptionalString+isNilOrEmpty.swift */; };
 		4BB3BC27225F5B1600DF944E /* FieldValidationRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB3BC26225F5B1600DF944E /* FieldValidationRepresentable.swift */; };
 		4BC67935224586CB0006236E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC67934224586CB0006236E /* AppDelegate.swift */; };
 		4BC6793A224586CB0006236E /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC67938224586CB0006236E /* Auth.storyboard */; };
@@ -46,7 +48,7 @@
 		4B3E44F12260A3230085E0C5 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		4B55D7FC22466CCB00364295 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		4B55D7FE22466CE400364295 /* ModalNavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalNavigationRouter.swift; sourceTree = "<group>"; };
-		4B55D80E2246CAA300364295 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		4B55D80E2246CAA300364295 /* AuthenticationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationCoordinator.swift; sourceTree = "<group>"; };
 		4B55D8102246CC0300364295 /* AppDelegateRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateRouter.swift; sourceTree = "<group>"; };
 		4B55D8122246CE7E00364295 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		4B55D8142246D37C00364295 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
@@ -54,7 +56,9 @@
 		4B784D63225F6FF000688C75 /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
 		4B784D65225F76F300688C75 /* ChildRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildRouter.swift; sourceTree = "<group>"; };
 		4B78521D225F844900688C75 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
-		4B982684226496F100F02591 /* DictionaryRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryRepresentable.swift; sourceTree = "<group>"; };
+		4B982684226496F100F02591 /* Encodable+asDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+asDictionary.swift"; sourceTree = "<group>"; };
+		4B982686226498B000F02591 /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
+		4B98268922649B1D00F02591 /* OptionalString+isNilOrEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OptionalString+isNilOrEmpty.swift"; sourceTree = "<group>"; };
 		4BB3BC26225F5B1600DF944E /* FieldValidationRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldValidationRepresentable.swift; sourceTree = "<group>"; };
 		4BC67931224586CB0006236E /* LingoChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LingoChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC67934224586CB0006236E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,7 +89,6 @@
 		4B1A7AD3225F3B37000F7F77 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4B982684226496F100F02591 /* DictionaryRepresentable.swift */,
 				4B1A7AD4225F3B48000F7F77 /* User.swift */,
 				4B78521D225F844900688C75 /* Token.swift */,
 			);
@@ -123,6 +126,7 @@
 			children = (
 				4B3E44EE226096E90085E0C5 /* NetworkService.swift */,
 				4B3E44F12260A3230085E0C5 /* LoginService.swift */,
+				4B982686226498B000F02591 /* RegisterService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -203,6 +207,15 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		4B98268822649B0200F02591 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4B98268922649B1D00F02591 /* OptionalString+isNilOrEmpty.swift */,
+				4B982684226496F100F02591 /* Encodable+asDictionary.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		4BB3BC25225F5B0200DF944E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +245,7 @@
 		4BC67933224586CB0006236E /* LingoChat */ = {
 			isa = PBXGroup;
 			children = (
+				4B98268822649B0200F02591 /* Extensions */,
 				4B784D60225F6FD900688C75 /* Networking */,
 				4B55D8082246C4B200364295 /* App */,
 				4BC67946224592300006236E /* Coordinators */,
@@ -248,7 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				4BC679472245923B0006236E /* Coordinator.swift */,
-				4B55D80E2246CAA300364295 /* LoginCoordinator.swift */,
+				4B55D80E2246CAA300364295 /* AuthenticationCoordinator.swift */,
 				4B280B002247A70F00E937DA /* ChatCoordinator.swift */,
 			);
 			path = Coordinators;
@@ -407,11 +421,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B55D7FD22466CCB00364295 /* Router.swift in Sources */,
+				4B98268A22649B1D00F02591 /* OptionalString+isNilOrEmpty.swift in Sources */,
 				4BC6794D224597430006236E /* LoginController.swift in Sources */,
 				4B280B012247A70F00E937DA /* ChatCoordinator.swift in Sources */,
-				4B55D80F2246CAA300364295 /* LoginCoordinator.swift in Sources */,
+				4B55D80F2246CAA300364295 /* AuthenticationCoordinator.swift in Sources */,
 				4BC6795322459E990006236E /* StoryboardIdentifiable.swift in Sources */,
 				4BC67935224586CB0006236E /* AppDelegate.swift in Sources */,
+				4B982687226498B000F02591 /* RegisterService.swift in Sources */,
 				4B1A7AD5225F3B48000F7F77 /* User.swift in Sources */,
 				4BC679482245923B0006236E /* Coordinator.swift in Sources */,
 				4B55D7FF22466CE400364295 /* ModalNavigationRouter.swift in Sources */,
@@ -422,7 +438,7 @@
 				4B3E44F22260A3230085E0C5 /* LoginService.swift in Sources */,
 				4B55D8152246D37C00364295 /* NavigationRouter.swift in Sources */,
 				4B784D66225F76F300688C75 /* ChildRouter.swift in Sources */,
-				4B982685226496F100F02591 /* DictionaryRepresentable.swift in Sources */,
+				4B982685226496F100F02591 /* Encodable+asDictionary.swift in Sources */,
 				4BB3BC27225F5B1600DF944E /* FieldValidationRepresentable.swift in Sources */,
 				4B78521E225F844900688C75 /* Token.swift in Sources */,
 				4B280AFB2247A5F300E937DA /* UserChatListController.swift in Sources */,

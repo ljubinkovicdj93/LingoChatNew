@@ -53,7 +53,7 @@ extension Creatable where Self: Routable {
     func create(headers: HTTPHeaders = [:], parameters: Parameters = [:]) -> RequestConverter {
         let temp = Self.init()
         let route = "\(temp.route)"
-        return RequestConverter(method: .post, route: route, headers: headers)
+        return RequestConverter(method: .post, route: route, headers: headers, parameters: parameters)
     }
 }
 
@@ -150,7 +150,11 @@ struct RequestConverter: RequestConverterProtocol {
                 urlRequest.setValue($0.value, forHTTPHeaderField: $0.key)
             }
             
-            return try URLEncoding.default.encode(urlRequest, with: parameters)
+            let encoding: ParameterEncoding = self.method == .get ? URLEncoding.default : JSONEncoding(options: .prettyPrinted)
+            
+            let alamofireRequest = try encoding.encode(urlRequest, with: self.parameters)
+            
+            return alamofireRequest
         } catch {
             print("asUrlRequestError: \(error.localizedDescription)")
             throw error

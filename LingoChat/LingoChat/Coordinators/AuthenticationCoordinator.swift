@@ -7,16 +7,19 @@ import UIKit
 import Alamofire
 
 class AuthenticationCoordinator: Coordinator {
+    // MARK: - Properties
     var networkService: AnyNetworkService<Token, NetworkRouter.LoginRouter>?
     
     var children: [Coordinator] = []
     var router: Router
     
+    // MARK: - Initialization
     init(router: Router, networkService: AnyNetworkService<Token, NetworkRouter.LoginRouter>? = nil) {
         self.router = router
         self.networkService = networkService
     }
     
+    // MARK: - Coordinator methods
     func present(animated: Bool, onDismissed: (() -> Void)?) {
         let loginController = LoginController.instantiate(delegate: self)
         router.present(loginController)
@@ -29,8 +32,7 @@ class AuthenticationCoordinator: Coordinator {
     }
     
     private func presentRegisterController() {
-        let registerController = RegisterController.instantiate(delegate: self,
-                                                                networkService: AnyNetworkService(RegisterService()))
+        let registerController = RegisterController.instantiate(delegate: self)
         router.present(registerController)
     }
     
@@ -68,7 +70,7 @@ extension AuthenticationCoordinator: LoginControllerDelegate {
 extension AuthenticationCoordinator: RegisterControllerDelegate {
     func registerControllerDidPressRegister(_ viewController: RegisterController, with userData: User) {
         do {
-            guard let registerNetService = viewController.networkService else { return }
+            let registerNetService = AnyNetworkService(RegisterService())
             let userDictionary = try userData.asDictionary()
             print("userDictionary", userDictionary)
             
@@ -88,7 +90,6 @@ extension AuthenticationCoordinator: RegisterControllerDelegate {
             print("error:", error.localizedDescription)
             return
         }
-        
     }
     
     func registerControllerDidPressCancel(_ viewController: RegisterController) {

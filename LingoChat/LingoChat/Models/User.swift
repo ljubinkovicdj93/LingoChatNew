@@ -6,18 +6,34 @@
 import Foundation
 
 struct User: Codable {
-    let id: UUID
-    var firstName: String
-    var lastName: String
+    var id: UUID?
     var email: String
     var password: String
-    var username: String?
+    var username: String
+    var firstName: String
+    var lastName: String
     var photoUrl: String?
-    var friendCount: Int = 0
+    var friendCount: Int?
     
     var fullName: String {
         guard !firstName.isEmpty, !lastName.isEmpty else { return "" }
         return "\(firstName) + \(lastName)"
+    }
+    
+    init(firstName: String, lastName: String, email: String, password: String, username: String) {
+        self.firstName = firstName
+        self.lastName = lastName
+        self.email = email
+        self.password = password
+        self.username = username
+    }
+    
+    struct Public: Codable {
+        let id: UUID
+        var email: String
+        var username: String
+        var firstName: String
+        var lastName: String
     }
     
     struct Credentials {
@@ -33,5 +49,3 @@ struct User: Codable {
         }
     }
 }
-
-extension User: DictionaryRepresentable {}

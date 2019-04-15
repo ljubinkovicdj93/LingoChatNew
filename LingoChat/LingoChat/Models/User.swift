@@ -33,3 +33,5 @@ struct User: Codable {
         }
     }
 }
+
+extension User: DictionaryRepresentable {}

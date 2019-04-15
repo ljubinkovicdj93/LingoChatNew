@@ -10,3 +10,5 @@ struct Token: Codable {
     var token: String
     var userID: String
 }
+
+extension Token: DictionaryRepresentable {}

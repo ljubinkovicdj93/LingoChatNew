@@ -24,6 +24,7 @@
 		4B784D64225F6FF000688C75 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B784D63225F6FF000688C75 /* RouterProtocol.swift */; };
 		4B784D66225F76F300688C75 /* ChildRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B784D65225F76F300688C75 /* ChildRouter.swift */; };
 		4B78521E225F844900688C75 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B78521D225F844900688C75 /* Token.swift */; };
+		4B982685226496F100F02591 /* DictionaryRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B982684226496F100F02591 /* DictionaryRepresentable.swift */; };
 		4BB3BC27225F5B1600DF944E /* FieldValidationRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB3BC26225F5B1600DF944E /* FieldValidationRepresentable.swift */; };
 		4BC67935224586CB0006236E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC67934224586CB0006236E /* AppDelegate.swift */; };
 		4BC6793A224586CB0006236E /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC67938224586CB0006236E /* Auth.storyboard */; };
@@ -53,6 +54,7 @@
 		4B784D63225F6FF000688C75 /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
 		4B784D65225F76F300688C75 /* ChildRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildRouter.swift; sourceTree = "<group>"; };
 		4B78521D225F844900688C75 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		4B982684226496F100F02591 /* DictionaryRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryRepresentable.swift; sourceTree = "<group>"; };
 		4BB3BC26225F5B1600DF944E /* FieldValidationRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldValidationRepresentable.swift; sourceTree = "<group>"; };
 		4BC67931224586CB0006236E /* LingoChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LingoChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC67934224586CB0006236E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 		4B1A7AD3225F3B37000F7F77 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4B982684226496F100F02591 /* DictionaryRepresentable.swift */,
 				4B1A7AD4225F3B48000F7F77 /* User.swift */,
 				4B78521D225F844900688C75 /* Token.swift */,
 			);
@@ -419,6 +422,7 @@
 				4B3E44F22260A3230085E0C5 /* LoginService.swift in Sources */,
 				4B55D8152246D37C00364295 /* NavigationRouter.swift in Sources */,
 				4B784D66225F76F300688C75 /* ChildRouter.swift in Sources */,
+				4B982685226496F100F02591 /* DictionaryRepresentable.swift in Sources */,
 				4BB3BC27225F5B1600DF944E /* FieldValidationRepresentable.swift in Sources */,
 				4B78521E225F844900688C75 /* Token.swift in Sources */,
 				4B280AFB2247A5F300E937DA /* UserChatListController.swift in Sources */,

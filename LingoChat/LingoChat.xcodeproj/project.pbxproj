@@ -12,9 +12,11 @@
 		4B280AFD2247A60400E937DA /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B280AFC2247A60400E937DA /* Chat.storyboard */; };
 		4B280AFF2247A65B00E937DA /* ChatLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B280AFE2247A65B00E937DA /* ChatLogController.swift */; };
 		4B280B012247A70F00E937DA /* ChatCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B280B002247A70F00E937DA /* ChatCoordinator.swift */; };
+		4B3E44EF226096E90085E0C5 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3E44EE226096E90085E0C5 /* NetworkService.swift */; };
+		4B3E44F22260A3230085E0C5 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3E44F12260A3230085E0C5 /* LoginService.swift */; };
 		4B55D7FD22466CCB00364295 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55D7FC22466CCB00364295 /* Router.swift */; };
 		4B55D7FF22466CE400364295 /* ModalNavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55D7FE22466CE400364295 /* ModalNavigationRouter.swift */; };
-		4B55D80F2246CAA300364295 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55D80E2246CAA300364295 /* AuthCoordinator.swift */; };
+		4B55D80F2246CAA300364295 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55D80E2246CAA300364295 /* LoginCoordinator.swift */; };
 		4B55D8112246CC0300364295 /* AppDelegateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55D8102246CC0300364295 /* AppDelegateRouter.swift */; };
 		4B55D8132246CE7E00364295 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55D8122246CE7E00364295 /* RegisterController.swift */; };
 		4B55D8152246D37C00364295 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55D8142246D37C00364295 /* NavigationRouter.swift */; };
@@ -39,9 +41,11 @@
 		4B280AFC2247A60400E937DA /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		4B280AFE2247A65B00E937DA /* ChatLogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogController.swift; sourceTree = "<group>"; };
 		4B280B002247A70F00E937DA /* ChatCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCoordinator.swift; sourceTree = "<group>"; };
+		4B3E44EE226096E90085E0C5 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		4B3E44F12260A3230085E0C5 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		4B55D7FC22466CCB00364295 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		4B55D7FE22466CE400364295 /* ModalNavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalNavigationRouter.swift; sourceTree = "<group>"; };
-		4B55D80E2246CAA300364295 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		4B55D80E2246CAA300364295 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		4B55D8102246CC0300364295 /* AppDelegateRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateRouter.swift; sourceTree = "<group>"; };
 		4B55D8122246CE7E00364295 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		4B55D8142246D37C00364295 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
@@ -109,6 +113,15 @@
 				4B280AFC2247A60400E937DA /* Chat.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		4B3E44F02260A3130085E0C5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4B3E44EE226096E90085E0C5 /* NetworkService.swift */,
+				4B3E44F12260A3230085E0C5 /* LoginService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		4B55D7FB22466CC000364295 /* Routers */ = {
@@ -179,6 +192,7 @@
 		4B784D60225F6FD900688C75 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				4B3E44F02260A3130085E0C5 /* Services */,
 				4B784D61225F6FE900688C75 /* NetworkRouter.swift */,
 				4B784D63225F6FF000688C75 /* RouterProtocol.swift */,
 				4B784D65225F76F300688C75 /* ChildRouter.swift */,
@@ -231,7 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				4BC679472245923B0006236E /* Coordinator.swift */,
-				4B55D80E2246CAA300364295 /* AuthCoordinator.swift */,
+				4B55D80E2246CAA300364295 /* LoginCoordinator.swift */,
 				4B280B002247A70F00E937DA /* ChatCoordinator.swift */,
 			);
 			path = Coordinators;
@@ -392,15 +406,17 @@
 				4B55D7FD22466CCB00364295 /* Router.swift in Sources */,
 				4BC6794D224597430006236E /* LoginController.swift in Sources */,
 				4B280B012247A70F00E937DA /* ChatCoordinator.swift in Sources */,
-				4B55D80F2246CAA300364295 /* AuthCoordinator.swift in Sources */,
+				4B55D80F2246CAA300364295 /* LoginCoordinator.swift in Sources */,
 				4BC6795322459E990006236E /* StoryboardIdentifiable.swift in Sources */,
 				4BC67935224586CB0006236E /* AppDelegate.swift in Sources */,
 				4B1A7AD5225F3B48000F7F77 /* User.swift in Sources */,
 				4BC679482245923B0006236E /* Coordinator.swift in Sources */,
 				4B55D7FF22466CE400364295 /* ModalNavigationRouter.swift in Sources */,
 				4B784D64225F6FF000688C75 /* RouterProtocol.swift in Sources */,
+				4B3E44EF226096E90085E0C5 /* NetworkService.swift in Sources */,
 				4B784D62225F6FE900688C75 /* NetworkRouter.swift in Sources */,
 				4B55D8112246CC0300364295 /* AppDelegateRouter.swift in Sources */,
+				4B3E44F22260A3230085E0C5 /* LoginService.swift in Sources */,
 				4B55D8152246D37C00364295 /* NavigationRouter.swift in Sources */,
 				4B784D66225F76F300688C75 /* ChildRouter.swift in Sources */,
 				4BB3BC27225F5B1600DF944E /* FieldValidationRepresentable.swift in Sources */,

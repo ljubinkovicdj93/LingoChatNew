@@ -19,4 +19,17 @@ struct User: Codable {
         guard !firstName.isEmpty, !lastName.isEmpty else { return "" }
         return "\(firstName) + \(lastName)"
     }
+    
+    struct Credentials {
+        var email: String
+        var password: String
+        
+        var base64EncodedCredentials: String? {
+            guard let credentialData = "\(self.email):\(self.password)".data(using: String.Encoding.utf8) else {
+                return nil
+            }
+            let base64Credentials = credentialData.base64EncodedString(options: [])
+            return base64Credentials
+        }
+    }
 }

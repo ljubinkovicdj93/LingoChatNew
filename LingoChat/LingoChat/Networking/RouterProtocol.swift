@@ -50,7 +50,7 @@ extension Creatable where Self: Routable {
     ///                                 "first_name": "Test",
     ///                                 "last_name": "User"])
     ///````
-    static func create(headers: HTTPHeaders = [:], parameters: Parameters = [:]) -> RequestConverter {
+    func create(headers: HTTPHeaders = [:], parameters: Parameters = [:]) -> RequestConverter {
         let temp = Self.init()
         let route = "\(temp.route)"
         return RequestConverter(method: .post, route: route, headers: headers)
@@ -66,7 +66,7 @@ extension Readable where Self: Routable {
     /// ````
     /// Router.User.get(params: "1")
     ///````
-    static func get(headers: HTTPHeaders = [:], params: String = "", parameters: Parameters = [:]) -> RequestConverter {
+    func get(headers: HTTPHeaders = [:], params: String = "", parameters: Parameters = [:]) -> RequestConverter {
         let temp = Self.init()
         let route = "\(temp.route)" + (params.isEmpty ? "" : "/\(params)")
         return RequestConverter(method: .get, route: route, headers: headers, parameters: parameters)
@@ -88,7 +88,7 @@ extension Updatable where Self: Routable {
     /// ````
     /// Router.User.update(params: "1", parameters: ["username": "testUser"])
     ///````
-    static func update(headers: HTTPHeaders = [:], params: String, parameters: Parameters) -> RequestConverter {
+    func update(headers: HTTPHeaders = [:], params: String, parameters: Parameters) -> RequestConverter {
         let temp = Self.init()
         let route = "\(temp.route)/\(params)"
         return RequestConverter(method: .put, route: route, headers: headers, parameters: parameters)
@@ -104,14 +104,14 @@ extension Deletable where Self: Routable {
     /// ````
     /// Router.User.delete(params: "1")
     ///````
-    static func delete(headers: HTTPHeaders = [:], params: String, parameters: Parameters = [:]) -> RequestConverter {
+    func delete(headers: HTTPHeaders = [:], params: String, parameters: Parameters = [:]) -> RequestConverter {
         let temp = Self.init()
         let route = "\(temp.route)/\(params)"
         return RequestConverter(method: .delete, route: route, headers: headers, parameters: parameters)
     }
 }
 
-protocol RequestConverterProtocol: URLRequestConvertible {
+public protocol RequestConverterProtocol: URLRequestConvertible {
     var method: HTTPMethod { get set }
     var route: String { get set }
     var parameters: Parameters { get set }

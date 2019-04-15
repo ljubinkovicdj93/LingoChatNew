@@ -35,27 +35,27 @@ struct NetworkRouter: URLRouter {
     }
     
     struct MessageRouter: Creatable, Readable, Deletable, Updatable {
-        var route: String = "users"
+        var route: String = "messages"
         var urlParams: String!
     }
 
     struct LanguageRouter: Creatable, Readable, Deletable, Updatable {
-        var route: String = "users"
+        var route: String = "languages"
         var urlParams: String!
     }
     
     struct FriendshipRouter: Creatable, Readable, Deletable, Updatable {
-        var route: String = "users"
+        var route: String = "friendships"
         var urlParams: String!
     }
     
     struct ChatRouter: Creatable, Readable, Deletable, Updatable {
-        var route: String = "users"
+        var route: String = "chats"
         var urlParams: String!
     }
     
     struct UserChatRouter: Creatable, Readable, Deletable, Updatable {
-        var route: String = "users"
+        var route: String = "user-chats"
         var urlParams: String!
     }
 }

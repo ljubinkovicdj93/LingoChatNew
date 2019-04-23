@@ -6,23 +6,23 @@
 import UIKit
 
 class ChatCoordinator: Coordinator {
-    #warning("TODO: Implement")
-//    var networkService: AnyNetworkService<Chat, NetworkRouter.ChatRouter>?
-    
+    // MARK: - Properties
     var children: [Coordinator] = []
     var router: Router
     
+    // MARK: - Initialization
     init(router: Router) {
         self.router = router
-//        self.networkService = networkService
     }
     
+    // MARK: - Coordinator methods
     func present(animated: Bool, onDismissed: (() -> Void)?) {
         let registerController = UserChatListController.instantiate(delegate: self)
         router.present(registerController)
     }
 }
 
+// MARK: - UserChatListControllerDelegate
 extension ChatCoordinator: UserChatListControllerDelegate {
     func userChatListControllerDidSelectChatItem(_ viewController: UserChatListController, at indexPath: IndexPath) {
         print("Selected item at row: \(indexPath.row)")
@@ -35,6 +35,7 @@ extension ChatCoordinator: UserChatListControllerDelegate {
     }
 }
 
+// MARK: - ChatLogControllerDelegate
 extension ChatCoordinator: ChatLogControllerDelegate {
     func chatLogControllerDidPressSendMessage(_ viewController: ChatLogController) {
         print("press...")

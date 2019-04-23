@@ -6,27 +6,19 @@
 import Foundation
 import Alamofire
 
-class LoginService: NetworkService {
-    func execute(parameters: Parameters = [:], networkRouter: NetworkRouter.LoginRouter, with completionHandler: @escaping ((Result<Token>) -> Void)) {
-        guard let email = parameters["email"] as? String,
-            let password = parameters["password"] as? String else {
-            fatalError("No email and/or password found in parameters!")
-        }
-        
-        let userCredentials = User.Credentials.init(email: email, password: password)
-        
-        guard let base64Credentials = userCredentials.base64EncodedCredentials else {
-            completionHandler(.failure(NetworkError.failed))
-            return
-        }
-        
+final class LoginService {
+    static func login(credentials: User.Credentials, with completionHandler: @escaping (Result<Token>) -> Void) {
+        guard let base64Credentials = credentials.base64EncodedCredentials else { return }
         let headers = ["Authorization": "Basic \(base64Credentials)"]
+        let loginRequest = NetworkRouter.LoginRouter.create(headers: headers)
         
-        sendNetworkRequest(networkRouter.create(headers: headers)) { result in
+        NetworkRouter.sendRequest(loginRequest) { (result: Result<Token>) in
             switch result {
             case .success(let token):
+                print("token:", token)
                 completionHandler(.success(token))
             case .failure(let error):
+                print("error:", error.localizedDescription)
                 completionHandler(.failure(error))
             }
         }

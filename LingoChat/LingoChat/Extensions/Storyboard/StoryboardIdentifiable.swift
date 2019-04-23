@@ -15,14 +15,14 @@ extension UIStoryboard {
         }
     }
     
-    class func storyboard(_ storyboard: Storyboard, bundle: Bundle? = nil) -> UIStoryboard {
-        return UIStoryboard(name: storyboard.filename, bundle: bundle)
-    }
-    
     class func instantiateViewController<VC: UIViewController>(fromStoryboard: Storyboard) -> VC {
         let storyboard = UIStoryboard.storyboard(fromStoryboard)
         let viewController: VC = storyboard.instantiateViewController()
         return viewController
+    }
+    
+    private class func storyboard(_ storyboard: Storyboard, bundle: Bundle? = nil) -> UIStoryboard {
+        return UIStoryboard(name: storyboard.filename, bundle: bundle)
     }
     
     private func instantiateViewController<VC: UIViewController>() -> VC {
@@ -42,5 +42,3 @@ extension StoryboardIdentifiable where Self: UIViewController {
         return String(describing: self)
     }
 }
-
-extension UIViewController: StoryboardIdentifiable {}

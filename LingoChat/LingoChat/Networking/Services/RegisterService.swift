@@ -6,15 +6,23 @@
 import Foundation
 import Alamofire
 
-class RegisterService: NetworkService {
-    func execute(parameters: Parameters = [:], networkRouter: NetworkRouter.RegisterRouter, with completionHandler: @escaping ((Result<User.Public>) -> Void)) {        
-        sendNetworkRequest(networkRouter.create(parameters: parameters)) { result in
-            switch result {
-            case .success(let user):
-                completionHandler(.success(user))
-            case .failure(let error):
-                completionHandler(.failure(error))
+final class RegisterService {
+    static func register(user: User, with completionHandler: @escaping (Result<User.Public>) -> Void) {
+        do {
+            let userDictionary = try user.asDictionary()
+            let registerRequest = NetworkRouter.RegisterRouter.create(parameters: userDictionary)
+            NetworkRouter.sendRequest(registerRequest) { (result: Result<User.Public>) in
+                switch result {
+                case .success(let userPublic):
+                    print("userPublic:", userPublic)
+                    completionHandler(.success(userPublic))
+                case .failure(let error):
+                    print("error:", error.localizedDescription)
+                    completionHandler(.failure(error))
+                }
             }
+        } catch let error {
+            fatalError(error.localizedDescription)
         }
     }
 }

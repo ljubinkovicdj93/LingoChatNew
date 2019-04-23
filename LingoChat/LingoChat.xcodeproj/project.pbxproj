@@ -7,19 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B16173E226E60E900530874 /* String+iso8601Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B16173D226E60E900530874 /* String+iso8601Date.swift */; };
 		4B1A7AD5225F3B48000F7F77 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1A7AD4225F3B48000F7F77 /* User.swift */; };
 		4B280AFB2247A5F300E937DA /* UserChatListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B280AFA2247A5F300E937DA /* UserChatListController.swift */; };
 		4B280AFD2247A60400E937DA /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B280AFC2247A60400E937DA /* Chat.storyboard */; };
 		4B280AFF2247A65B00E937DA /* ChatLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B280AFE2247A65B00E937DA /* ChatLogController.swift */; };
 		4B280B012247A70F00E937DA /* ChatCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B280B002247A70F00E937DA /* ChatCoordinator.swift */; };
-		4B3E44EF226096E90085E0C5 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3E44EE226096E90085E0C5 /* NetworkService.swift */; };
+		4B3E44EF226096E90085E0C5 /* JSONDecoder+decodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3E44EE226096E90085E0C5 /* JSONDecoder+decodeResponse.swift */; };
 		4B3E44F22260A3230085E0C5 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3E44F12260A3230085E0C5 /* LoginService.swift */; };
+		4B4E801B226F337600DB1D81 /* UIViewController+storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4E801A226F337600DB1D81 /* UIViewController+storyboard.swift */; };
+		4B4E801E226F369F00DB1D81 /* DataResponse+handleNetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4E801D226F369F00DB1D81 /* DataResponse+handleNetworkResponse.swift */; };
 		4B55D7FD22466CCB00364295 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55D7FC22466CCB00364295 /* Router.swift */; };
 		4B55D7FF22466CE400364295 /* ModalNavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55D7FE22466CE400364295 /* ModalNavigationRouter.swift */; };
 		4B55D80F2246CAA300364295 /* AuthenticationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55D80E2246CAA300364295 /* AuthenticationCoordinator.swift */; };
 		4B55D8112246CC0300364295 /* AppDelegateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55D8102246CC0300364295 /* AppDelegateRouter.swift */; };
 		4B55D8132246CE7E00364295 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55D8122246CE7E00364295 /* RegisterController.swift */; };
 		4B55D8152246D37C00364295 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55D8142246D37C00364295 /* NavigationRouter.swift */; };
+		4B7179F7226A403F00087781 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7179F6226A403F00087781 /* UserService.swift */; };
 		4B784D62225F6FE900688C75 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B784D61225F6FE900688C75 /* NetworkRouter.swift */; };
 		4B784D64225F6FF000688C75 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B784D63225F6FF000688C75 /* RouterProtocol.swift */; };
 		4B784D66225F76F300688C75 /* ChildRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B784D65225F76F300688C75 /* ChildRouter.swift */; };
@@ -35,23 +39,30 @@
 		4BC679482245923B0006236E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC679472245923B0006236E /* Coordinator.swift */; };
 		4BC6794D224597430006236E /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC6794C224597430006236E /* LoginController.swift */; };
 		4BC6795322459E990006236E /* StoryboardIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC6795222459E990006236E /* StoryboardIdentifiable.swift */; };
+		4BEF16B9226CEF97005FEBC7 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEF16B8226CEF97005FEBC7 /* Chat.swift */; };
+		4BEF16BB226CF607005FEBC7 /* DateFormatter+formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEF16BA226CF607005FEBC7 /* DateFormatter+formatting.swift */; };
+		4BEF16BD226CF662005FEBC7 /* Date+stringDateConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEF16BC226CF662005FEBC7 /* Date+stringDateConversion.swift */; };
 		EBBD6082A94BB24EABD1EE45 /* Pods_LingoChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A0D220B0D3CF256CE38487 /* Pods_LingoChat.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B16173D226E60E900530874 /* String+iso8601Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+iso8601Date.swift"; sourceTree = "<group>"; };
 		4B1A7AD4225F3B48000F7F77 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4B280AFA2247A5F300E937DA /* UserChatListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserChatListController.swift; sourceTree = "<group>"; };
 		4B280AFC2247A60400E937DA /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		4B280AFE2247A65B00E937DA /* ChatLogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogController.swift; sourceTree = "<group>"; };
 		4B280B002247A70F00E937DA /* ChatCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCoordinator.swift; sourceTree = "<group>"; };
-		4B3E44EE226096E90085E0C5 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		4B3E44EE226096E90085E0C5 /* JSONDecoder+decodeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+decodeResponse.swift"; sourceTree = "<group>"; };
 		4B3E44F12260A3230085E0C5 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		4B4E801A226F337600DB1D81 /* UIViewController+storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+storyboard.swift"; sourceTree = "<group>"; };
+		4B4E801D226F369F00DB1D81 /* DataResponse+handleNetworkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataResponse+handleNetworkResponse.swift"; sourceTree = "<group>"; };
 		4B55D7FC22466CCB00364295 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		4B55D7FE22466CE400364295 /* ModalNavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalNavigationRouter.swift; sourceTree = "<group>"; };
 		4B55D80E2246CAA300364295 /* AuthenticationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationCoordinator.swift; sourceTree = "<group>"; };
 		4B55D8102246CC0300364295 /* AppDelegateRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateRouter.swift; sourceTree = "<group>"; };
 		4B55D8122246CE7E00364295 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		4B55D8142246D37C00364295 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
+		4B7179F6226A403F00087781 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		4B784D61225F6FE900688C75 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
 		4B784D63225F6FF000688C75 /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
 		4B784D65225F76F300688C75 /* ChildRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildRouter.swift; sourceTree = "<group>"; };
@@ -69,6 +80,9 @@
 		4BC679472245923B0006236E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		4BC6794C224597430006236E /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		4BC6795222459E990006236E /* StoryboardIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardIdentifiable.swift; sourceTree = "<group>"; };
+		4BEF16B8226CEF97005FEBC7 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		4BEF16BA226CF607005FEBC7 /* DateFormatter+formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+formatting.swift"; sourceTree = "<group>"; };
+		4BEF16BC226CF662005FEBC7 /* Date+stringDateConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+stringDateConversion.swift"; sourceTree = "<group>"; };
 		A48C09BC670132AB4BBF89A1 /* Pods-LingoChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LingoChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-LingoChat/Pods-LingoChat.release.xcconfig"; sourceTree = "<group>"; };
 		C3A0D220B0D3CF256CE38487 /* Pods_LingoChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LingoChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5485BEAC418927F278783B0 /* Pods-LingoChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LingoChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LingoChat/Pods-LingoChat.debug.xcconfig"; sourceTree = "<group>"; };
@@ -86,11 +100,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B16173C226E608E00530874 /* String */ = {
+			isa = PBXGroup;
+			children = (
+				4B98268922649B1D00F02591 /* OptionalString+isNilOrEmpty.swift */,
+				4B16173D226E60E900530874 /* String+iso8601Date.swift */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
 		4B1A7AD3225F3B37000F7F77 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				4B1A7AD4225F3B48000F7F77 /* User.swift */,
 				4B78521D225F844900688C75 /* Token.swift */,
+				4BEF16B8226CEF97005FEBC7 /* Chat.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -124,11 +148,28 @@
 		4B3E44F02260A3130085E0C5 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				4B3E44EE226096E90085E0C5 /* NetworkService.swift */,
 				4B3E44F12260A3230085E0C5 /* LoginService.swift */,
 				4B982686226498B000F02591 /* RegisterService.swift */,
+				4B7179F6226A403F00087781 /* UserService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		4B4E8019226F335A00DB1D81 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4B4E801A226F337600DB1D81 /* UIViewController+storyboard.swift */,
+			);
+			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		4B4E801C226F368F00DB1D81 /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				4B4E801D226F369F00DB1D81 /* DataResponse+handleNetworkResponse.swift */,
+				4B3E44EE226096E90085E0C5 /* JSONDecoder+decodeResponse.swift */,
+			);
+			path = Alamofire;
 			sourceTree = "<group>";
 		};
 		4B55D7FB22466CC000364295 /* Routers */ = {
@@ -210,7 +251,12 @@
 		4B98268822649B0200F02591 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				4B98268922649B1D00F02591 /* OptionalString+isNilOrEmpty.swift */,
+				4B4E801C226F368F00DB1D81 /* Alamofire */,
+				4B4E8019226F335A00DB1D81 /* UIViewController */,
+				4B16173C226E608E00530874 /* String */,
+				4BEF16C3226CF92B005FEBC7 /* Formatter */,
+				4BEF16BE226CF86A005FEBC7 /* Date */,
+				4BC6795122459E7F0006236E /* Storyboard */,
 				4B982684226496F100F02591 /* Encodable+asDictionary.swift */,
 			);
 			path = Extensions;
@@ -253,7 +299,6 @@
 				4B55D80A2246C4E500364295 /* Resources */,
 				4B55D7FB22466CC000364295 /* Routers */,
 				4B55D8092246C4C300364295 /* Screens */,
-				4BC6795122459E7F0006236E /* Storyboard */,
 			);
 			path = LingoChat;
 			sourceTree = "<group>";
@@ -274,6 +319,22 @@
 				4BC6795222459E990006236E /* StoryboardIdentifiable.swift */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		4BEF16BE226CF86A005FEBC7 /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				4BEF16BC226CF662005FEBC7 /* Date+stringDateConversion.swift */,
+			);
+			path = Date;
+			sourceTree = "<group>";
+		};
+		4BEF16C3226CF92B005FEBC7 /* Formatter */ = {
+			isa = PBXGroup;
+			children = (
+				4BEF16BA226CF607005FEBC7 /* DateFormatter+formatting.swift */,
+			);
+			path = Formatter;
 			sourceTree = "<group>";
 		};
 		6D19815DF6688FCF2B9B917C /* Frameworks */ = {
@@ -421,6 +482,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B55D7FD22466CCB00364295 /* Router.swift in Sources */,
+				4B7179F7226A403F00087781 /* UserService.swift in Sources */,
 				4B98268A22649B1D00F02591 /* OptionalString+isNilOrEmpty.swift in Sources */,
 				4BC6794D224597430006236E /* LoginController.swift in Sources */,
 				4B280B012247A70F00E937DA /* ChatCoordinator.swift in Sources */,
@@ -428,11 +490,15 @@
 				4BC6795322459E990006236E /* StoryboardIdentifiable.swift in Sources */,
 				4BC67935224586CB0006236E /* AppDelegate.swift in Sources */,
 				4B982687226498B000F02591 /* RegisterService.swift in Sources */,
+				4B4E801E226F369F00DB1D81 /* DataResponse+handleNetworkResponse.swift in Sources */,
 				4B1A7AD5225F3B48000F7F77 /* User.swift in Sources */,
 				4BC679482245923B0006236E /* Coordinator.swift in Sources */,
+				4B4E801B226F337600DB1D81 /* UIViewController+storyboard.swift in Sources */,
+				4B16173E226E60E900530874 /* String+iso8601Date.swift in Sources */,
 				4B55D7FF22466CE400364295 /* ModalNavigationRouter.swift in Sources */,
 				4B784D64225F6FF000688C75 /* RouterProtocol.swift in Sources */,
-				4B3E44EF226096E90085E0C5 /* NetworkService.swift in Sources */,
+				4BEF16B9226CEF97005FEBC7 /* Chat.swift in Sources */,
+				4B3E44EF226096E90085E0C5 /* JSONDecoder+decodeResponse.swift in Sources */,
 				4B784D62225F6FE900688C75 /* NetworkRouter.swift in Sources */,
 				4B55D8112246CC0300364295 /* AppDelegateRouter.swift in Sources */,
 				4B3E44F22260A3230085E0C5 /* LoginService.swift in Sources */,
@@ -443,6 +509,8 @@
 				4B78521E225F844900688C75 /* Token.swift in Sources */,
 				4B280AFB2247A5F300E937DA /* UserChatListController.swift in Sources */,
 				4B280AFF2247A65B00E937DA /* ChatLogController.swift in Sources */,
+				4BEF16BB226CF607005FEBC7 /* DateFormatter+formatting.swift in Sources */,
+				4BEF16BD226CF662005FEBC7 /* Date+stringDateConversion.swift in Sources */,
 				4B55D8132246CE7E00364295 /* RegisterController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

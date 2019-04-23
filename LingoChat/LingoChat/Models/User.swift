@@ -31,12 +31,36 @@ struct User: Codable {
     struct Public: Codable {
         let id: UUID
         var email: String
-        var username: String
+        var username: String?
         var firstName: String
         var lastName: String
+        var photoUrl: String?
+        var friendCount: Int?
+        
+        enum CodingKeys: String, CodingKey {
+            case id
+            case email
+            case username
+            case firstName
+            case lastName
+            case photoUrl
+            case friendCount
+        }
+        
+        init(from decoder: Decoder) throws {
+            let values = try decoder.container(keyedBy: CodingKeys.self)
+            self.id = try values.decode(UUID.self, forKey: .id)
+            self.email = try values.decode(String.self, forKey: .email)
+            self.firstName = try values.decode(String.self, forKey: .firstName)
+            self.lastName = try values.decode(String.self, forKey: .lastName)
+            
+            self.username = try values.decodeIfPresent(String.self, forKey: .username)
+            self.photoUrl = try values.decodeIfPresent(String.self, forKey: .photoUrl)
+            self.friendCount = try values.decodeIfPresent(Int.self, forKey: .friendCount)
+        }
     }
     
-    struct Credentials {
+    struct Credentials: Encodable {
         var email: String
         var password: String
         

@@ -1,17 +1,21 @@
 PODS:
   - Alamofire (4.8.2)
-  - Bond (7.2.0):
+  - Bond (7.4.1):
     - Differ (~> 1.3)
-    - ReactiveKit (~> 3.9)
-  - Differ (1.3.0)
+    - ReactiveKit (~> 3.10)
+  - Differ (1.4.1)
   - JWTDecode (2.2.0)
+  - MessageInputBar/Core (0.4.1)
+  - MessageKit (2.0.0):
+    - MessageInputBar/Core
   - ObjectMapper (3.4.2)
-  - ReactiveKit (3.9.7)
+  - ReactiveKit (3.10.0)
 
 DEPENDENCIES:
   - Alamofire
   - Bond
   - JWTDecode (~> 2.2)
+  - MessageKit
   - ObjectMapper (~> 3.4)
 
 SPEC REPOS:
@@ -20,17 +24,21 @@ SPEC REPOS:
     - Bond
     - Differ
     - JWTDecode
+    - MessageInputBar
+    - MessageKit
     - ObjectMapper
     - ReactiveKit
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
-  Bond: c05ebe6d2f2a3845a19f304faec4a295253f49a8
-  Differ: 9fcee7602542d7c6484ce05a0faec1c11258ed63
+  Bond: 6e73608fdd9d44e84f52f9bf9d56098ad80cbbb1
+  Differ: ca4350872e32a1aeedf3d9e2d9e47127833bfa9c
   JWTDecode: 85a405ab16d5473e99bd89ded1d535090ebd6a0e
+  MessageInputBar: e81c7535347f1f7b923de7080409a535a004b6e4
+  MessageKit: 29c1c87e5a396d2ca7a3f712e5171dc9aba42a1e
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
-  ReactiveKit: 5f4c440715d671901c382ae6b42ed3337ce4699b
+  ReactiveKit: af0d53664c2326a03d2c9f92c92a30bbc7f3a9ee
 
-PODFILE CHECKSUM: c230067f369a876f7845892f7c415880c6b70b80
+PODFILE CHECKSUM: 23fa0ff3697a863a99c9733489025465e822433d
 
 COCOAPODS: 1.5.3

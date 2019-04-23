@@ -5,8 +5,7 @@
 
 import UIKit
 
-public protocol Coordinator: class {
-    
+protocol Coordinator: class {
     var children: [Coordinator] { get set }
     var router: Router { get }
     

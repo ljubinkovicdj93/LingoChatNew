@@ -6,11 +6,15 @@
 import UIKit
 
 class ChatCoordinator: Coordinator {
+    #warning("TODO: Implement")
+//    var networkService: AnyNetworkService<Chat, NetworkRouter.ChatRouter>?
+    
     var children: [Coordinator] = []
     var router: Router
     
     init(router: Router) {
         self.router = router
+//        self.networkService = networkService
     }
     
     func present(animated: Bool, onDismissed: (() -> Void)?) {

@@ -7,16 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B1A7AD5225F3B48000F7F77 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1A7AD4225F3B48000F7F77 /* User.swift */; };
 		4B280AFB2247A5F300E937DA /* UserChatListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B280AFA2247A5F300E937DA /* UserChatListController.swift */; };
 		4B280AFD2247A60400E937DA /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B280AFC2247A60400E937DA /* Chat.storyboard */; };
 		4B280AFF2247A65B00E937DA /* ChatLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B280AFE2247A65B00E937DA /* ChatLogController.swift */; };
 		4B280B012247A70F00E937DA /* ChatCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B280B002247A70F00E937DA /* ChatCoordinator.swift */; };
+		4B3E44EF226096E90085E0C5 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3E44EE226096E90085E0C5 /* NetworkService.swift */; };
+		4B3E44F22260A3230085E0C5 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3E44F12260A3230085E0C5 /* LoginService.swift */; };
 		4B55D7FD22466CCB00364295 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55D7FC22466CCB00364295 /* Router.swift */; };
 		4B55D7FF22466CE400364295 /* ModalNavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55D7FE22466CE400364295 /* ModalNavigationRouter.swift */; };
-		4B55D80F2246CAA300364295 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55D80E2246CAA300364295 /* AuthCoordinator.swift */; };
+		4B55D80F2246CAA300364295 /* AuthenticationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55D80E2246CAA300364295 /* AuthenticationCoordinator.swift */; };
 		4B55D8112246CC0300364295 /* AppDelegateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55D8102246CC0300364295 /* AppDelegateRouter.swift */; };
 		4B55D8132246CE7E00364295 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55D8122246CE7E00364295 /* RegisterController.swift */; };
 		4B55D8152246D37C00364295 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55D8142246D37C00364295 /* NavigationRouter.swift */; };
+		4B784D62225F6FE900688C75 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B784D61225F6FE900688C75 /* NetworkRouter.swift */; };
+		4B784D64225F6FF000688C75 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B784D63225F6FF000688C75 /* RouterProtocol.swift */; };
+		4B784D66225F76F300688C75 /* ChildRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B784D65225F76F300688C75 /* ChildRouter.swift */; };
+		4B78521E225F844900688C75 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B78521D225F844900688C75 /* Token.swift */; };
+		4B982685226496F100F02591 /* Encodable+asDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B982684226496F100F02591 /* Encodable+asDictionary.swift */; };
+		4B982687226498B000F02591 /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B982686226498B000F02591 /* RegisterService.swift */; };
+		4B98268A22649B1D00F02591 /* OptionalString+isNilOrEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B98268922649B1D00F02591 /* OptionalString+isNilOrEmpty.swift */; };
+		4BB3BC27225F5B1600DF944E /* FieldValidationRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB3BC26225F5B1600DF944E /* FieldValidationRepresentable.swift */; };
 		4BC67935224586CB0006236E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC67934224586CB0006236E /* AppDelegate.swift */; };
 		4BC6793A224586CB0006236E /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC67938224586CB0006236E /* Auth.storyboard */; };
 		4BC6793C224586CD0006236E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BC6793B224586CD0006236E /* Assets.xcassets */; };
@@ -24,19 +35,31 @@
 		4BC679482245923B0006236E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC679472245923B0006236E /* Coordinator.swift */; };
 		4BC6794D224597430006236E /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC6794C224597430006236E /* LoginController.swift */; };
 		4BC6795322459E990006236E /* StoryboardIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC6795222459E990006236E /* StoryboardIdentifiable.swift */; };
+		EBBD6082A94BB24EABD1EE45 /* Pods_LingoChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A0D220B0D3CF256CE38487 /* Pods_LingoChat.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B1A7AD4225F3B48000F7F77 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4B280AFA2247A5F300E937DA /* UserChatListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserChatListController.swift; sourceTree = "<group>"; };
 		4B280AFC2247A60400E937DA /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		4B280AFE2247A65B00E937DA /* ChatLogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogController.swift; sourceTree = "<group>"; };
 		4B280B002247A70F00E937DA /* ChatCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCoordinator.swift; sourceTree = "<group>"; };
+		4B3E44EE226096E90085E0C5 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		4B3E44F12260A3230085E0C5 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		4B55D7FC22466CCB00364295 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		4B55D7FE22466CE400364295 /* ModalNavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalNavigationRouter.swift; sourceTree = "<group>"; };
-		4B55D80E2246CAA300364295 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		4B55D80E2246CAA300364295 /* AuthenticationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationCoordinator.swift; sourceTree = "<group>"; };
 		4B55D8102246CC0300364295 /* AppDelegateRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateRouter.swift; sourceTree = "<group>"; };
 		4B55D8122246CE7E00364295 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		4B55D8142246D37C00364295 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
+		4B784D61225F6FE900688C75 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
+		4B784D63225F6FF000688C75 /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
+		4B784D65225F76F300688C75 /* ChildRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildRouter.swift; sourceTree = "<group>"; };
+		4B78521D225F844900688C75 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		4B982684226496F100F02591 /* Encodable+asDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+asDictionary.swift"; sourceTree = "<group>"; };
+		4B982686226498B000F02591 /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
+		4B98268922649B1D00F02591 /* OptionalString+isNilOrEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OptionalString+isNilOrEmpty.swift"; sourceTree = "<group>"; };
+		4BB3BC26225F5B1600DF944E /* FieldValidationRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldValidationRepresentable.swift; sourceTree = "<group>"; };
 		4BC67931224586CB0006236E /* LingoChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LingoChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC67934224586CB0006236E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BC67939224586CB0006236E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Auth.storyboard; sourceTree = "<group>"; };
@@ -46,6 +69,9 @@
 		4BC679472245923B0006236E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		4BC6794C224597430006236E /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		4BC6795222459E990006236E /* StoryboardIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardIdentifiable.swift; sourceTree = "<group>"; };
+		A48C09BC670132AB4BBF89A1 /* Pods-LingoChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LingoChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-LingoChat/Pods-LingoChat.release.xcconfig"; sourceTree = "<group>"; };
+		C3A0D220B0D3CF256CE38487 /* Pods_LingoChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LingoChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5485BEAC418927F278783B0 /* Pods-LingoChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LingoChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LingoChat/Pods-LingoChat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,12 +79,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBBD6082A94BB24EABD1EE45 /* Pods_LingoChat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B1A7AD3225F3B37000F7F77 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4B1A7AD4225F3B48000F7F77 /* User.swift */,
+				4B78521D225F844900688C75 /* Token.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		4B280AF72247A5C100E937DA /* Chat */ = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +119,16 @@
 				4B280AFC2247A60400E937DA /* Chat.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		4B3E44F02260A3130085E0C5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4B3E44EE226096E90085E0C5 /* NetworkService.swift */,
+				4B3E44F12260A3230085E0C5 /* LoginService.swift */,
+				4B982686226498B000F02591 /* RegisterService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		4B55D7FB22466CC000364295 /* Routers */ = {
@@ -143,10 +189,39 @@
 		4B55D80D2246CA1A00364295 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				4BB3BC25225F5B0200DF944E /* Helpers */,
 				4B55D80B2246CA0200364295 /* Controllers */,
 				4B55D80C2246CA0700364295 /* Views */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		4B784D60225F6FD900688C75 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				4B3E44F02260A3130085E0C5 /* Services */,
+				4B784D61225F6FE900688C75 /* NetworkRouter.swift */,
+				4B784D63225F6FF000688C75 /* RouterProtocol.swift */,
+				4B784D65225F76F300688C75 /* ChildRouter.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		4B98268822649B0200F02591 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4B98268922649B1D00F02591 /* OptionalString+isNilOrEmpty.swift */,
+				4B982684226496F100F02591 /* Encodable+asDictionary.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4BB3BC25225F5B0200DF944E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4BB3BC26225F5B1600DF944E /* FieldValidationRepresentable.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		4BC67928224586CB0006236E = {
@@ -154,6 +229,8 @@
 			children = (
 				4BC67933224586CB0006236E /* LingoChat */,
 				4BC67932224586CB0006236E /* Products */,
+				9AEF19A03474AB32784A6292 /* Pods */,
+				6D19815DF6688FCF2B9B917C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -168,12 +245,15 @@
 		4BC67933224586CB0006236E /* LingoChat */ = {
 			isa = PBXGroup;
 			children = (
+				4B98268822649B0200F02591 /* Extensions */,
+				4B784D60225F6FD900688C75 /* Networking */,
 				4B55D8082246C4B200364295 /* App */,
-				4BC6795122459E7F0006236E /* Storyboard */,
 				4BC67946224592300006236E /* Coordinators */,
+				4B1A7AD3225F3B37000F7F77 /* Models */,
+				4B55D80A2246C4E500364295 /* Resources */,
 				4B55D7FB22466CC000364295 /* Routers */,
 				4B55D8092246C4C300364295 /* Screens */,
-				4B55D80A2246C4E500364295 /* Resources */,
+				4BC6795122459E7F0006236E /* Storyboard */,
 			);
 			path = LingoChat;
 			sourceTree = "<group>";
@@ -182,7 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				4BC679472245923B0006236E /* Coordinator.swift */,
-				4B55D80E2246CAA300364295 /* AuthCoordinator.swift */,
+				4B55D80E2246CAA300364295 /* AuthenticationCoordinator.swift */,
 				4B280B002247A70F00E937DA /* ChatCoordinator.swift */,
 			);
 			path = Coordinators;
@@ -196,6 +276,23 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
+		6D19815DF6688FCF2B9B917C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C3A0D220B0D3CF256CE38487 /* Pods_LingoChat.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9AEF19A03474AB32784A6292 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C5485BEAC418927F278783B0 /* Pods-LingoChat.debug.xcconfig */,
+				A48C09BC670132AB4BBF89A1 /* Pods-LingoChat.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -203,9 +300,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4BC67943224586CD0006236E /* Build configuration list for PBXNativeTarget "LingoChat" */;
 			buildPhases = (
+				5A4535D45AFC0A5B2ECD6772 /* [CP] Check Pods Manifest.lock */,
 				4BC6792D224586CB0006236E /* Sources */,
 				4BC6792E224586CB0006236E /* Frameworks */,
 				4BC6792F224586CB0006236E /* Resources */,
+				D55E4869D6879D44F1546591 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -263,21 +362,85 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5A4535D45AFC0A5B2ECD6772 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LingoChat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D55E4869D6879D44F1546591 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LingoChat/Pods-LingoChat-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bond/Bond.framework",
+				"${BUILT_PRODUCTS_DIR}/Differ/Differ.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveKit/ReactiveKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bond.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differ.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LingoChat/Pods-LingoChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4BC6792D224586CB0006236E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				4B55D7FD22466CCB00364295 /* Router.swift in Sources */,
+				4B98268A22649B1D00F02591 /* OptionalString+isNilOrEmpty.swift in Sources */,
 				4BC6794D224597430006236E /* LoginController.swift in Sources */,
 				4B280B012247A70F00E937DA /* ChatCoordinator.swift in Sources */,
-				4B55D80F2246CAA300364295 /* AuthCoordinator.swift in Sources */,
+				4B55D80F2246CAA300364295 /* AuthenticationCoordinator.swift in Sources */,
 				4BC6795322459E990006236E /* StoryboardIdentifiable.swift in Sources */,
 				4BC67935224586CB0006236E /* AppDelegate.swift in Sources */,
+				4B982687226498B000F02591 /* RegisterService.swift in Sources */,
+				4B1A7AD5225F3B48000F7F77 /* User.swift in Sources */,
 				4BC679482245923B0006236E /* Coordinator.swift in Sources */,
 				4B55D7FF22466CE400364295 /* ModalNavigationRouter.swift in Sources */,
+				4B784D64225F6FF000688C75 /* RouterProtocol.swift in Sources */,
+				4B3E44EF226096E90085E0C5 /* NetworkService.swift in Sources */,
+				4B784D62225F6FE900688C75 /* NetworkRouter.swift in Sources */,
 				4B55D8112246CC0300364295 /* AppDelegateRouter.swift in Sources */,
+				4B3E44F22260A3230085E0C5 /* LoginService.swift in Sources */,
 				4B55D8152246D37C00364295 /* NavigationRouter.swift in Sources */,
+				4B784D66225F76F300688C75 /* ChildRouter.swift in Sources */,
+				4B982685226496F100F02591 /* Encodable+asDictionary.swift in Sources */,
+				4BB3BC27225F5B1600DF944E /* FieldValidationRepresentable.swift in Sources */,
+				4B78521E225F844900688C75 /* Token.swift in Sources */,
 				4B280AFB2247A5F300E937DA /* UserChatListController.swift in Sources */,
 				4B280AFF2247A65B00E937DA /* ChatLogController.swift in Sources */,
 				4B55D8132246CE7E00364295 /* RegisterController.swift in Sources */,
@@ -424,6 +587,7 @@
 		};
 		4BC67944224586CD0006236E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5485BEAC418927F278783B0 /* Pods-LingoChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -442,6 +606,7 @@
 		};
 		4BC67945224586CD0006236E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A48C09BC670132AB4BBF89A1 /* Pods-LingoChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

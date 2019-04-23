@@ -15,8 +15,12 @@ class ChatLogController: UICollectionViewController {
 
     weak var delegate: ChatLogControllerDelegate?
     
+    var chatDetails: Chat!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = chatDetails.title
         
         print("INSIDE USER CHAT LOG")
 

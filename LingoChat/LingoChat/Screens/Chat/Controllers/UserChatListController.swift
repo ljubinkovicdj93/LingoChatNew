@@ -15,31 +15,41 @@ class UserChatListController: UICollectionViewController {
 
     weak var delegate: UserChatListControllerDelegate?
     
+    var token: Token?
+    var userChats: [Chat] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        fetchUserChats()
+        
         print("INSIDE USER CHAT LIST")
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
     }
+    
+    private func fetchUserChats() {
+        guard let userID = token?.userID else { return }
 
-    // MARK: UICollectionViewDataSource
-
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+        let userUUID = UUID(uuidString: userID)
+        UserService.getChats(for: userUUID) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let chats):
+                self.userChats = chats
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            case .failure(let error):
+                print("UCLC ERROR:", error.localizedDescription)
+            }
+        }
     }
-
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 5
+        return userChats.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

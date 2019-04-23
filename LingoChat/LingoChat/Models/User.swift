@@ -21,11 +21,6 @@ struct User: Codable {
         return User.Credentials(email: self.email, password: self.password)
     }
     
-    var fullName: String {
-        guard !firstName.isEmpty, !lastName.isEmpty else { return "" }
-        return "\(firstName) + \(lastName)"
-    }
-    
     init(firstName: String, lastName: String, email: String, password: String, username: String) {
         self.firstName = firstName
         self.lastName = lastName
@@ -34,6 +29,8 @@ struct User: Codable {
         self.username = username
     }
     
+    /// Public representation of the User struct.
+    /// Public is a class since we are caching it to get the current user.
     struct Public: Codable, Mappable {
         var id: String!
         var email: String!

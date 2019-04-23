@@ -8,10 +8,10 @@ import JWTDecode
 
 class ChatCoordinator: Coordinator {
     // MARK: - Properties
+    let token: Token
+    
     var children: [Coordinator] = []
     var router: Router
-    
-    let token: Token
     
     // MARK: - Initialization
     init(router: Router, token: Token) {
@@ -21,20 +21,27 @@ class ChatCoordinator: Coordinator {
     
     // MARK: - Coordinator methods
     func present(animated: Bool, onDismissed: (() -> Void)?) {
-        let registerController = UserChatListController.instantiate(delegate: self)
-        router.present(registerController)
+        let userChatListController = UserChatListController.instantiate(delegate: self)
+        userChatListController.token = token
+        router.present(userChatListController)
     }
 }
 
 // MARK: - UserChatListControllerDelegate
 extension ChatCoordinator: UserChatListControllerDelegate {
     func userChatListControllerDidSelectChatItem(_ viewController: UserChatListController, at indexPath: IndexPath) {
-        print("Selected item at row: \(indexPath.row)")
-        presentChatLogController()
+        let userChats = viewController.userChats
+        guard userChats.count > 0 else { return }
+        
+        let chat = userChats[indexPath.row]
+        
+        print("Selected item at row: \(chat)")
+        presentChatLogController(chat: chat)
     }
     
-    private func presentChatLogController() {
+    private func presentChatLogController(chat: Chat) {
         let chatLogController = ChatLogController.instantiate(delegate: self)
+        chatLogController.chatDetails = chat
         router.present(chatLogController)
     }
 }

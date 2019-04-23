@@ -19,14 +19,16 @@ final class UserService {
         }
     }
     
-    static func getUser(_ id: UUID) {
+    static func getUser(_ id: UUID, with completionHandler: @escaping (Result<User.Public>) -> Void) {
         let getSingleUserRequest = NetworkRouter.UserRouter.get(params: id.uuidString)
         NetworkRouter.sendRequest(getSingleUserRequest) { (result: Result<User.Public>) in
             switch result {
             case .success(let userPublic):
                 print("userPublic:", userPublic)
+                completionHandler(.success(userPublic))
             case .failure(let error):
                 print("error:", error.localizedDescription)
+                completionHandler(.failure(error))
             }
         }
     }
@@ -51,14 +53,17 @@ final class UserService {
         }
     }
     
-    static func getChats(for userId: UUID) {
-        let getUsersChatsRequest = NetworkRouter.UserRouter(userId.uuidString).getChats()
+    static func getChats(for userId: UUID?, with completionHandler: @escaping (Result<[Chat]>) -> Void) {
+        guard let userUUID = userId else { return }
+        let getUsersChatsRequest = NetworkRouter.UserRouter(userUUID.uuidString).getChats()
         NetworkRouter.sendRequest(getUsersChatsRequest) { (result: Result<[Chat]>) in
             switch result {
             case .success(let chats):
                 print("chats:", chats)
+                completionHandler(.success(chats))
             case .failure(let error):
                 print("error:", error.localizedDescription)
+                completionHandler(.failure(error))
             }
         }
     }

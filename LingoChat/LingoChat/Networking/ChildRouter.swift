@@ -7,45 +7,74 @@ import Alamofire
 
 // These routes have a child route
 
-// MARK: - Authentication Child Routes
-//protocol HasAuthentication {}
-//extension HasAuthentication where Self: Routable {
-//    func loginRoute(params: String) -> NetworkRouter.UserRouter {
-//        var child = NetworkRouter.UserRouter(params)
-//        child.route = nestedRouteURL(parent: self, child: child)
-//        return child
-//    }
-//    
-//    func createStatus(parameters: Parameters) -> RequestConverterProtocol {
-//        return nestedRoute(args: urlParams, child: NetworkRouter.SessionsRoute.create(parameters: parameters))
-//    }
-//    
-//    func updateStatus(params: String, parameters: Parameters) -> RequestConverterProtocol {
-//        return nestedRoute(args: urlParams, child: NetworkRouter.SessionsRoute.update(params: params, parameters: parameters))
-//    }
+protocol HasMessages {}
+extension HasMessages where Self: Routable {
+    func messageRouter(params: String = "") -> NetworkRouter.MessageRouter {
+        var child = NetworkRouter.MessageRouter(params)
+        child.route = nestedRouteURL(parent: self, child: child)
+        return child
+    }
     
-    /*
-     func comment(params: String) -> Router.Comment {
-     var child = Router.Comment(params)
-     child.route = nestedRouteURL(parent: self, child: child)
-     return child
-     }
-     
-     func getComment(params: String) -> RequestConverterProtocol {
-     let returnComment = nestedRoute(args: urlParams, child: Router.Comment.get(params: params))
-     return returnComment
-     }
-     
-     func createComment(parameters: Parameters) -> RequestConverterProtocol {
-     return nestedRoute(args: urlParams, child: Router.Comment.create(parameters: parameters))
-     }
-     
-     func deleteComment(params: String) -> RequestConverterProtocol {
-     return nestedRoute(args: urlParams, child: Router.Comment.delete(params: params))
-     }
-     
-     func updateComment(params: String, parameters: Parameters) -> RequestConverterProtocol {
-     return nestedRoute(args: urlParams, child: Router.Comment.update(params: params, parameters: parameters))
-     }
-     */
-//}
+    func getMessages(params: String) -> RequestConverterProtocol {
+        let returnedMessages = nestedRoute(args: urlParams,
+                                           child: NetworkRouter.MessageRouter.get(params: params))
+        return returnedMessages
+    }
+}
+
+protocol HasChats {}
+extension HasChats where Self: Routable {
+    func chatRouter(params: String = "") -> NetworkRouter.ChatRouter {
+        var child = NetworkRouter.ChatRouter(params)
+        child.route = nestedRouteURL(parent: self, child: child)
+        return child
+    }
+    
+    func getChats() -> RequestConverterProtocol {
+        let returnedChats = nestedRoute(args: urlParams,
+                                        child: NetworkRouter.ChatRouter.get())
+        return returnedChats
+    }
+    
+    func getChat(params: String) -> RequestConverterProtocol {
+        let returnedChats = nestedRoute(args: urlParams,
+                                        child: NetworkRouter.ChatRouter.get(params: params))
+        return returnedChats
+    }
+}
+
+protocol HasUsers {}
+extension HasUsers where Self: Routable {
+    func user(params: String) -> NetworkRouter.UserRouter {
+        var child = NetworkRouter.UserRouter(params)
+        child.route = nestedRouteURL(parent: self, child: child)
+        return child
+    }
+    
+    func getUsers() -> RequestConverterProtocol {
+        let returnedUsers = nestedRoute(args: urlParams,
+                                        child: NetworkRouter.UserRouter.get())
+        return returnedUsers
+    }
+    
+    func getUser(params: String) -> RequestConverterProtocol {
+        let returnedUser = nestedRoute(args: urlParams,
+                                       child: NetworkRouter.UserRouter.get(params: params))
+        return returnedUser
+    }
+    
+//    func createUser(parameters: Parameters) -> RequestConverterProtocol {
+//        return nestedRoute(args: urlParams, child: NetworkRouter.UserRouter.create(parameters: parameters))
+//    }
+//
+//    func deleteUser(params: String) -> RequestConverterProtocol {
+//        return nestedRoute(args: urlParams,
+//                           child: NetworkRouter.UserRouter.delete(params: params))
+//    }
+//
+//    func updateUser(params: String, parameters: Parameters) -> RequestConverterProtocol {
+//        return nestedRoute(args: urlParams,
+//                           child: NetworkRouter.UserRouter.update(params: params,
+//                                                                  parameters: parameters))
+//    }
+}

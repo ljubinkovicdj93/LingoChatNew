@@ -14,10 +14,7 @@ public class NavigationRouter: NSObject {
     /// Use this to dismiss the router by popping to this.
     private let routerRootController: UIViewController?
     
-    /*
-     Is a mapping from UIViewController to on-dismiss closures.
-     You’ll use this later to perform an on-dismiss actions whenever view controllers are popped.
-     **/
+    /// Is a mapping from UIViewController to on-dismiss closures. This is used later to perform an on-dismiss actions whenever view controllers are popped.
     private var onDismissForViewController: [UIViewController: (() -> Void)] = [:]
     
     public init(navigationController: UINavigationController) {

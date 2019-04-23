@@ -8,15 +8,12 @@ import Alamofire
 
 class AuthenticationCoordinator: Coordinator {
     // MARK: - Properties
-    var networkService: AnyNetworkService<Token, NetworkRouter.LoginRouter>?
-    
     var children: [Coordinator] = []
     var router: Router
     
     // MARK: - Initialization
-    init(router: Router, networkService: AnyNetworkService<Token, NetworkRouter.LoginRouter>? = nil) {
+    init(router: Router) {
         self.router = router
-        self.networkService = networkService
     }
     
     // MARK: - Coordinator methods
@@ -44,19 +41,15 @@ class AuthenticationCoordinator: Coordinator {
 
 // MARK: - LoginControllerDelegate
 extension AuthenticationCoordinator: LoginControllerDelegate {
-    func loginControllerDidPressLogIn(_ viewController: LoginController, with credentials: (email: String, password: String)) {
-        guard let loginNetService = self.networkService else { return }
+    func loginControllerDidPressLogIn(_ viewController: LoginController, with credentials: User.Credentials) {
         print("Login tapped")
-        
-        loginNetService.execute(parameters: ["email": credentials.email, "password": credentials.password],
-                                networkRouter: NetworkRouter.LoginRouter()) { (result: Result<Token>) in
-                                    switch result {
-                                    case .success(let token):
-                                        print("HERE IS MY TOKEN!", token.token)
-                                        self.presentChatCoordinator(parent: viewController)
-                                    case .failure(let error):
-                                        print("error:", error.localizedDescription)
-                                    }
+        LoginService.login(credentials: credentials) { result in
+            switch result {
+            case .success(let token):
+                self.presentChatCoordinator(parent: viewController)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
         }
     }
     
@@ -69,26 +62,13 @@ extension AuthenticationCoordinator: LoginControllerDelegate {
 // MARK: - RegisterControllerDelegate
 extension AuthenticationCoordinator: RegisterControllerDelegate {
     func registerControllerDidPressRegister(_ viewController: RegisterController, with userData: User) {
-        do {
-            let registerNetService = AnyNetworkService(RegisterService())
-            let userDictionary = try userData.asDictionary()
-            print("userDictionary", userDictionary)
-            
-            registerNetService.execute(parameters: userDictionary,
-                                       networkRouter: NetworkRouter.RegisterRouter()) { [weak self] (result: Result<User.Public>) in
-                                        guard let self = self else { return }
-                                        switch result {
-                                        case .success(let publicUser):
-                                            print("registering...", publicUser)
-                                            self.presentChatCoordinator(parent: viewController)
-                                        case .failure(let error):
-                                            print(error)
-                                        }
+        RegisterService.register(user: userData) { result in
+            switch result {
+            case .success(let userPublic):
+                self.presentChatCoordinator(parent: viewController)
+            case .failure(let error):
+                print(error.localizedDescription)
             }
-            
-        } catch let error {
-            print("error:", error.localizedDescription)
-            return
         }
     }
     

@@ -71,7 +71,7 @@ extension RegisterController: FieldValidationRepresentable {}
 
 extension RegisterController {
     class func instantiate(delegate: RegisterControllerDelegate) -> RegisterController {
-        let registerController: RegisterController = UIStoryboard.instantiateViewController(fromStoryboard: .auth)
+        let registerController = RegisterController.controller(from: .auth)
         registerController.delegate = delegate
         return registerController
     }

@@ -24,7 +24,7 @@ struct NetworkRouter: URLRouter {
 //        return "http://localhost:8080/api"
     }
     
-    struct UserRouter: Creatable, Readable, Deletable, Updatable {
+    struct UserRouter: Creatable, Readable, Deletable, Updatable, HasChats {
         var route: String = "users"
         var urlParams: String!
     }
@@ -66,3 +66,20 @@ struct NetworkRouter: URLRouter {
     }
 }
 
+extension NetworkRouter {
+    static func sendRequest<Model: Decodable>(_ req: RequestConverterProtocol, with completionHandler: @escaping (Result<Model>) -> Void) {
+        Alamofire.request(req).responseJSON { response in
+            
+            let result = response.handleNetworkResponse(type: Model.self, response)
+            
+            switch result {
+            case .success(let object):
+                print(object)
+                completionHandler(.success(object))
+            case .failure(let error):
+                print(error.localizedDescription)
+                completionHandler(.failure(error))
+            }
+        }
+    }
+}

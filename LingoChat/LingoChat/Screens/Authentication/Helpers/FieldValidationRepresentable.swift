@@ -26,6 +26,10 @@ extension FieldValidationRepresentable {
         return pred.evaluate(with: email)
     }
     
+    /// Validates the user's password.
+    /// A valid password must have at least: one uppercase, one digit, one lowercase, and at least 8 characters.
+    /// - Parameter passwordText: the password to be validated.
+    /// - Returns: boolean result, whether the password is valid or not.
     func isValidPassword(_ passwordText: String?) -> Bool {
         guard let password = passwordText else { return false }
         

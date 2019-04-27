@@ -22,9 +22,9 @@ class AuthenticationCoordinator: Coordinator {
         router.present(loginController)
     }
     
-    private func presentChatCoordinator(parent: UIViewController) {
+    private func presentChatCoordinator(parent: UIViewController, token: Token) {
         let router = ModalNavigationRouter(parentViewController: parent)
-        let coordinator = ChatCoordinator(router: router)
+        let coordinator = ChatCoordinator(router: router, token: token)
         self.presentChild(coordinator, animated: true)
     }
     
@@ -46,7 +46,11 @@ extension AuthenticationCoordinator: LoginControllerDelegate {
         LoginService.login(credentials: credentials) { result in
             switch result {
             case .success(let token):
-                self.presentChatCoordinator(parent: viewController)
+                do {
+                    self.presentChatCoordinator(parent: viewController, token: token)
+                } catch {
+                    print(error.localizedDescription)
+                }
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -64,8 +68,8 @@ extension AuthenticationCoordinator: RegisterControllerDelegate {
     func registerControllerDidPressRegister(_ viewController: RegisterController, with userData: User) {
         RegisterService.register(user: userData) { result in
             switch result {
-            case .success(let userPublic):
-                self.presentChatCoordinator(parent: viewController)
+            case .success(let token):
+                self.presentChatCoordinator(parent: viewController, token: token)
             case .failure(let error):
                 print(error.localizedDescription)
             }

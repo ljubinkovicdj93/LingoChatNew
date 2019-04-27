@@ -14,14 +14,14 @@ protocol URLRouter {
 struct NetworkRouter: URLRouter {
     static var basePathWithHttpProtocol: String {
         #warning("TODO: Move this property to .xcconfig file.")
-        return "https://lingo-chat-vapor.herokuapp.com/api"
-//        return "http://localhost:8080/api"
+//        return "https://lingo-chat-vapor.herokuapp.com/api"
+        return "http://localhost:8080/api"
     }
     
     static var basePathWithWssProtocol: String {
         #warning("TODO: Move this property to .xcconfig file.")
-        return "wss://lingo-chat-vapor.herokuapp.com/api"
-//        return "http://localhost:8080/api"
+//        return "wss://lingo-chat-vapor.herokuapp.com/api"
+        return "http://localhost:8080/api"
     }
     
     struct UserRouter: Creatable, Readable, Deletable, Updatable, HasChats {
@@ -36,7 +36,7 @@ struct NetworkRouter: URLRouter {
     
     struct RegisterRouter: Creatable {
         #warning("TODO: change to users/register")
-        var route: String = "users"
+        var route: String = "users/register"
         var urlParams: String!
     }
     

@@ -13,6 +13,7 @@
 		4B280AFD2247A60400E937DA /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B280AFC2247A60400E937DA /* Chat.storyboard */; };
 		4B280AFF2247A65B00E937DA /* ChatLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B280AFE2247A65B00E937DA /* ChatLogController.swift */; };
 		4B280B012247A70F00E937DA /* ChatCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B280B002247A70F00E937DA /* ChatCoordinator.swift */; };
+		4B2D4287226F9FCD004C908C /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2D4286226F9FCD004C908C /* Message.swift */; };
 		4B3E44EF226096E90085E0C5 /* JSONDecoder+decodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3E44EE226096E90085E0C5 /* JSONDecoder+decodeResponse.swift */; };
 		4B3E44F22260A3230085E0C5 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3E44F12260A3230085E0C5 /* LoginService.swift */; };
 		4B4E801B226F337600DB1D81 /* UIViewController+storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4E801A226F337600DB1D81 /* UIViewController+storyboard.swift */; };
@@ -54,6 +55,7 @@
 		4B280AFC2247A60400E937DA /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		4B280AFE2247A65B00E937DA /* ChatLogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogController.swift; sourceTree = "<group>"; };
 		4B280B002247A70F00E937DA /* ChatCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCoordinator.swift; sourceTree = "<group>"; };
+		4B2D4286226F9FCD004C908C /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		4B3E44EE226096E90085E0C5 /* JSONDecoder+decodeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+decodeResponse.swift"; sourceTree = "<group>"; };
 		4B3E44F12260A3230085E0C5 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		4B4E801A226F337600DB1D81 /* UIViewController+storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+storyboard.swift"; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				4B1A7AD4225F3B48000F7F77 /* User.swift */,
 				4B78521D225F844900688C75 /* Token.swift */,
 				4BEF16B8226CEF97005FEBC7 /* Chat.swift */,
+				4B2D4286226F9FCD004C908C /* Message.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 				4B1A7AD5225F3B48000F7F77 /* User.swift in Sources */,
 				4BC679482245923B0006236E /* Coordinator.swift in Sources */,
 				4B4E801B226F337600DB1D81 /* UIViewController+storyboard.swift in Sources */,
+				4B2D4287226F9FCD004C908C /* Message.swift in Sources */,
 				4B16173E226E60E900530874 /* String+iso8601Date.swift in Sources */,
 				4B55D7FF22466CE400364295 /* ModalNavigationRouter.swift in Sources */,
 				4B784D64225F6FF000688C75 /* RouterProtocol.swift in Sources */,

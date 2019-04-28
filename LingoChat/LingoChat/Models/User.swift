@@ -16,6 +16,12 @@ struct User: Codable {
     var photoUrl: String?
     var friendCount: Int?
     
+    var fullName: String? {
+        guard !firstName.isEmpty && !lastName.isEmpty else { return nil }
+        
+        return "\(firstName.capitalized) \(lastName.capitalized)"
+    }
+    
     var credentials: User.Credentials {
         guard !self.email.isEmpty, !self.password.isEmpty else { fatalError("Cannot get credentials!") }
         return User.Credentials(email: self.email, password: self.password)

@@ -4,6 +4,7 @@
 // Copyright © 2019 Dorde Ljubinkovic. All rights reserved.
 
 import UIKit
+import MessageKit
 
 private let reuseIdentifier = "Cell"
 
@@ -11,52 +12,66 @@ protocol ChatLogControllerDelegate: class {
     func chatLogControllerDidPressSendMessage(_ viewController: ChatLogController)
 }
 
-class ChatLogController: UICollectionViewController {
+class ChatLogController: MessagesViewController {
 
     weak var delegate: ChatLogControllerDelegate?
     
     var chatDetails: Chat!
+    var messages: [Message] = []
+    
+    lazy var user = User(firstName: "Djordje",
+                         lastName: "Ljubinkovic",
+                         email: "djole@gmail.com",
+                         password: "Djole1993!",
+                         username: "Le Djo")
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        messagesCollectionView.messagesDataSource = self
+        messagesCollectionView.messagesLayoutDelegate = self
+        messagesCollectionView.messagesDisplayDelegate = self
         
         title = chatDetails.title
         
         print("INSIDE USER CHAT LOG")
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
-    }
-
-    // MARK: UICollectionViewDataSource
-
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
-
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 15
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
-        cell.backgroundColor = .blue
-    
-        return cell
     }
     
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let testMessage = Message(text: "Lorem ipsum dolor sit amet...",
+                                  sender: Sender(id: user.email, displayName: user.fullName ?? user.username),
+                                  messageId: UUID().uuidString,
+                                  date: Date())
+        insertNewMessage(testMessage)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         delegate?.chatLogControllerDidPressSendMessage(self)
+    }
+    
+    // MARK: - Helper methods
+    private func insertNewMessage(_ message: Message) {
+        let containsMessage = messages.contains { $0 == message }
+        guard !containsMessage else { return }
+        
+        messages.append(message)
+        messages.sort {
+            $0.sentDate < $1.sentDate
+        }
+        
+        let isLatestMsg = messages.lastIndex(of: message) == (messages.count - 1)
+//        let shouldScrollToBottom = messagesCollectionView.isAtBottom && isLatestMsg
+        
+        messagesCollectionView.reloadData()
+        
+//        if shouldScrollToBottom {
+        if isLatestMsg {
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                self.messagesCollectionView.scrollToBottom(animated: true)
+            }
+        }
     }
 }
 
@@ -67,3 +82,28 @@ extension ChatLogController {
         return chatLogController
     }
 }
+
+// Some global variables for the sake of the example. Using globals is not recommended!
+let sender = Sender(id: "any_unique_id", displayName: "Steven")
+
+extension ChatLogController: MessagesDataSource {
+    func currentSender() -> Sender {
+        return sender
+    }
+    
+    func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
+        return messages[indexPath.section]
+    }
+    
+    func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
+        return messages.count
+    }
+}
+
+extension ChatLogController: MessagesDisplayDelegate {
+    func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
+        return isFromCurrentSender(message: message) ? .red : .blue
+    }
+}
+
+extension ChatLogController: MessagesLayoutDelegate {}

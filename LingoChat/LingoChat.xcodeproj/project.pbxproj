@@ -42,6 +42,7 @@
 		4BEF16B9226CEF97005FEBC7 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEF16B8226CEF97005FEBC7 /* Chat.swift */; };
 		4BEF16BB226CF607005FEBC7 /* DateFormatter+formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEF16BA226CF607005FEBC7 /* DateFormatter+formatting.swift */; };
 		4BEF16BD226CF662005FEBC7 /* Date+stringDateConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEF16BC226CF662005FEBC7 /* Date+stringDateConversion.swift */; };
+		4BFB13D42274FB5500A8736D /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFB13D32274FB5500A8736D /* AuthManager.swift */; };
 		EBBD6082A94BB24EABD1EE45 /* Pods_LingoChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A0D220B0D3CF256CE38487 /* Pods_LingoChat.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,7 @@
 		4BEF16B8226CEF97005FEBC7 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		4BEF16BA226CF607005FEBC7 /* DateFormatter+formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+formatting.swift"; sourceTree = "<group>"; };
 		4BEF16BC226CF662005FEBC7 /* Date+stringDateConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+stringDateConversion.swift"; sourceTree = "<group>"; };
+		4BFB13D32274FB5500A8736D /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		A48C09BC670132AB4BBF89A1 /* Pods-LingoChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LingoChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-LingoChat/Pods-LingoChat.release.xcconfig"; sourceTree = "<group>"; };
 		C3A0D220B0D3CF256CE38487 /* Pods_LingoChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LingoChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5485BEAC418927F278783B0 /* Pods-LingoChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LingoChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LingoChat/Pods-LingoChat.debug.xcconfig"; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 		4BC67933224586CB0006236E /* LingoChat */ = {
 			isa = PBXGroup;
 			children = (
+				4BFB13D32274FB5500A8736D /* AuthManager.swift */,
 				4B98268822649B0200F02591 /* Extensions */,
 				4B784D60225F6FD900688C75 /* Networking */,
 				4B55D8082246C4B200364295 /* App */,
@@ -508,6 +511,7 @@
 				4B3E44F22260A3230085E0C5 /* LoginService.swift in Sources */,
 				4B55D8152246D37C00364295 /* NavigationRouter.swift in Sources */,
 				4B784D66225F76F300688C75 /* ChildRouter.swift in Sources */,
+				4BFB13D42274FB5500A8736D /* AuthManager.swift in Sources */,
 				4B982685226496F100F02591 /* Encodable+asDictionary.swift in Sources */,
 				4BB3BC27225F5B1600DF944E /* FieldValidationRepresentable.swift in Sources */,
 				4B78521E225F844900688C75 /* Token.swift in Sources */,

@@ -13,17 +13,6 @@ class ChatCoordinator: Coordinator {
     
     let token: Token
     
-    private var userInfo: [String : Any] {
-        do {
-            let jwt = try decode(jwt: token.token)
-            let publicUserDict = jwt.body
-            
-            return publicUserDict
-        } catch {
-            return [:]
-        }
-    }
-    
     // MARK: - Initialization
     init(router: Router, token: Token) {
         self.router = router
@@ -32,7 +21,6 @@ class ChatCoordinator: Coordinator {
     
     // MARK: - Coordinator methods
     func present(animated: Bool, onDismissed: (() -> Void)?) {
-        print("userInfoId", userInfo["id"]!)
         let registerController = UserChatListController.instantiate(delegate: self)
         router.present(registerController)
     }

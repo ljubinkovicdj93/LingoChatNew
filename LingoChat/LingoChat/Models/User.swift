@@ -4,6 +4,7 @@
 // Copyright © 2019 Dorde Ljubinkovic. All rights reserved.
 
 import Foundation
+import ObjectMapper
 
 struct User: Codable {
     var id: UUID?
@@ -33,12 +34,12 @@ struct User: Codable {
         self.username = username
     }
     
-    struct Public: Codable {
-        let id: UUID
-        var email: String
+    struct Public: Codable, Mappable {
+        var id: String!
+        var email: String!
         var username: String?
-        var firstName: String
-        var lastName: String
+        var firstName: String!
+        var lastName: String!
         var photoUrl: String?
         var friendCount: Int?
         
@@ -52,9 +53,11 @@ struct User: Codable {
             case friendCount
         }
         
+        init?(map: Map) {}
+        
         init(from decoder: Decoder) throws {
             let values = try decoder.container(keyedBy: CodingKeys.self)
-            self.id = try values.decode(UUID.self, forKey: .id)
+            self.id = try values.decode(String.self, forKey: .id)
             self.email = try values.decode(String.self, forKey: .email)
             self.firstName = try values.decode(String.self, forKey: .firstName)
             self.lastName = try values.decode(String.self, forKey: .lastName)
@@ -62,6 +65,17 @@ struct User: Codable {
             self.username = try values.decodeIfPresent(String.self, forKey: .username)
             self.photoUrl = try values.decodeIfPresent(String.self, forKey: .photoUrl)
             self.friendCount = try values.decodeIfPresent(Int.self, forKey: .friendCount)
+        }
+        
+        // MARK: - Mappable methods
+        mutating func mapping(map: Map) {
+            id <- map["id"]
+            email <- map["email"]
+            username <- map["username"]
+            firstName <- map["firstName"]
+            lastName <- map["lastName"]
+            photoUrl <- map["photoUrl"]
+            friendCount <- map["friendCount"]
         }
     }
     

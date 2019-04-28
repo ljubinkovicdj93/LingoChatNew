@@ -46,11 +46,7 @@ extension AuthenticationCoordinator: LoginControllerDelegate {
         LoginService.login(credentials: credentials) { result in
             switch result {
             case .success(let token):
-                do {
-                    self.presentChatCoordinator(parent: viewController, token: token)
-                } catch {
-                    print(error.localizedDescription)
-                }
+                self.presentChatCoordinator(parent: viewController, token: token)
             case .failure(let error):
                 print(error.localizedDescription)
             }

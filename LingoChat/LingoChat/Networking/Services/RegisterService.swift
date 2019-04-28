@@ -15,6 +15,7 @@ final class RegisterService {
                 switch result {
                 case .success(let token):
                     print("token:", token)
+                    try? AuthManager.shared.setCurrentUser(jwtToken: token.token)
                     completionHandler(.success(token))
                 case .failure(let error):
                     print("error:", error.localizedDescription)

@@ -7,15 +7,16 @@ import Foundation
 import Alamofire
 
 final class RegisterService {
-    static func register(user: User, with completionHandler: @escaping (Result<User.Public>) -> Void) {
+    static func register(user: User, with completionHandler: @escaping (Result<Token>) -> Void) {
         do {
             let userDictionary = try user.asDictionary()
             let registerRequest = NetworkRouter.RegisterRouter.create(parameters: userDictionary)
-            NetworkRouter.sendRequest(registerRequest) { (result: Result<User.Public>) in
+            NetworkRouter.sendRequest(registerRequest) { (result: Result<Token>) in
                 switch result {
-                case .success(let userPublic):
-                    print("userPublic:", userPublic)
-                    completionHandler(.success(userPublic))
+                case .success(let token):
+                    print("token:", token)
+                    try? AuthManager.shared.setCurrentUser(jwtToken: token.token)
+                    completionHandler(.success(token))
                 case .failure(let error):
                     print("error:", error.localizedDescription)
                     completionHandler(.failure(error))

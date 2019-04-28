@@ -4,15 +4,19 @@
 // Copyright © 2019 Dorde Ljubinkovic. All rights reserved.
 
 import UIKit
+import JWTDecode
 
 class ChatCoordinator: Coordinator {
     // MARK: - Properties
     var children: [Coordinator] = []
     var router: Router
     
+    let token: Token
+    
     // MARK: - Initialization
-    init(router: Router) {
+    init(router: Router, token: Token) {
         self.router = router
+        self.token = token
     }
     
     // MARK: - Coordinator methods

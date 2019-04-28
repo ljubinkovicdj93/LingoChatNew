@@ -8,4 +8,6 @@ target 'LingoChat' do
   # Pods for LingoChat
   pod 'Bond'
   pod 'Alamofire'
+  pod 'JWTDecode', '~> 2.2'
+  pod 'ObjectMapper', '~> 3.4'
 end

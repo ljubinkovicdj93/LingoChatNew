@@ -29,14 +29,10 @@ class ChatCoordinator: Coordinator {
 
 // MARK: - UserChatListControllerDelegate
 extension ChatCoordinator: UserChatListControllerDelegate {
-    func userChatListControllerDidSelectChatItem(_ viewController: UserChatListController, at indexPath: IndexPath) {
-        let userChats = viewController.userChats
-        guard userChats.count > 0 else { return }
+    func userChatListControllerDidSelectChatItem(_ viewController: UserChatListController, chatItem: Chat) {
         
-        let chat = userChats[indexPath.row]
-        
-        print("Selected item at row: \(chat)")
-        presentChatLogController(chat: chat)
+        print("Selected item at row: \(chatItem)")
+        presentChatLogController(chat: chatItem)
     }
     
     private func presentChatLogController(chat: Chat) {

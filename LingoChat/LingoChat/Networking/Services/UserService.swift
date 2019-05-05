@@ -53,9 +53,8 @@ final class UserService {
         }
     }
     
-    static func getChats(for userId: UUID?, with completionHandler: @escaping (Result<[Chat]>) -> Void) {
-        guard let userUUID = userId else { return }
-        let getUsersChatsRequest = NetworkRouter.UserRouter(userUUID.uuidString).getChats()
+    static func getChats(for userId: String, with completionHandler: @escaping (Result<[Chat]>) -> Void) {
+        let getUsersChatsRequest = NetworkRouter.UserRouter(userId).getChats()
         NetworkRouter.sendRequest(getUsersChatsRequest) { (result: Result<[Chat]>) in
             switch result {
             case .success(let chats):

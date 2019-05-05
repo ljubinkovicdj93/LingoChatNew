@@ -44,6 +44,7 @@
 		4BEF16BB226CF607005FEBC7 /* DateFormatter+formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEF16BA226CF607005FEBC7 /* DateFormatter+formatting.swift */; };
 		4BEF16BD226CF662005FEBC7 /* Date+stringDateConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEF16BC226CF662005FEBC7 /* Date+stringDateConversion.swift */; };
 		4BFB13D42274FB5500A8736D /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFB13D32274FB5500A8736D /* AuthManager.swift */; };
+		4BFE0A072278950300D4D896 /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFE0A062278950300D4D896 /* ChatService.swift */; };
 		EA91DA227B40E6E5CE01A619 /* Pods_LingoChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7960059D8B6C01C4F2C0BF4C /* Pods_LingoChat.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +89,7 @@
 		4BEF16BA226CF607005FEBC7 /* DateFormatter+formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+formatting.swift"; sourceTree = "<group>"; };
 		4BEF16BC226CF662005FEBC7 /* Date+stringDateConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+stringDateConversion.swift"; sourceTree = "<group>"; };
 		4BFB13D32274FB5500A8736D /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		4BFE0A062278950300D4D896 /* ChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
 		581252F467AC0B576E8D9639 /* Pods-LingoChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LingoChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-LingoChat/Pods-LingoChat.release.xcconfig"; sourceTree = "<group>"; };
 		7960059D8B6C01C4F2C0BF4C /* Pods_LingoChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LingoChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -156,6 +158,7 @@
 				4B3E44F12260A3230085E0C5 /* LoginService.swift */,
 				4B982686226498B000F02591 /* RegisterService.swift */,
 				4B7179F6226A403F00087781 /* UserService.swift */,
+				4BFE0A062278950300D4D896 /* ChatService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -502,6 +505,7 @@
 				4B280B012247A70F00E937DA /* ChatCoordinator.swift in Sources */,
 				4B55D80F2246CAA300364295 /* AuthenticationCoordinator.swift in Sources */,
 				4BC6795322459E990006236E /* StoryboardIdentifiable.swift in Sources */,
+				4BFE0A072278950300D4D896 /* ChatService.swift in Sources */,
 				4BC67935224586CB0006236E /* AppDelegate.swift in Sources */,
 				4B982687226498B000F02591 /* RegisterService.swift in Sources */,
 				4B4E801E226F369F00DB1D81 /* DataResponse+handleNetworkResponse.swift in Sources */,

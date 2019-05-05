@@ -8,7 +8,7 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 protocol UserChatListControllerDelegate: class {
-    func userChatListControllerDidSelectChatItem(_ viewController: UserChatListController, at indexPath: IndexPath)
+    func userChatListControllerDidSelectChatItem(_ viewController: UserChatListController, chatItem: Chat)
 }
 
 class UserChatListController: UICollectionViewController {
@@ -16,12 +16,28 @@ class UserChatListController: UICollectionViewController {
     weak var delegate: UserChatListControllerDelegate?
     
     var token: Token?
-    var userChats: [Chat] = []
+    private var chats: [Chat] = [] {
+        didSet {
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                self.collectionView.reloadData()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        fetchUserChats()
+        guard let currentUserId = AuthManager.shared.currentUser?.id else { return }
+         
+        UserService.getChats(for: currentUserId) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let chats):
+                self.chats = chats
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
         
         print("INSIDE USER CHAT LIST")
 
@@ -29,32 +45,14 @@ class UserChatListController: UICollectionViewController {
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
     }
     
-    private func fetchUserChats() {
-        guard let userID = token?.userID else { return }
-
-        let userUUID = UUID(uuidString: userID)
-        UserService.getChats(for: userUUID) { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let chats):
-                self.userChats = chats
-                DispatchQueue.main.async {
-                    self.collectionView.reloadData()
-                }
-            case .failure(let error):
-                print("UCLC ERROR:", error.localizedDescription)
-            }
-        }
-    }
-
+    // MARK: UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return userChats.count
+        return chats.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
+        
         // Configure the cell
         cell.backgroundColor = .red
         
@@ -62,7 +60,9 @@ class UserChatListController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate?.userChatListControllerDidSelectChatItem(self, at: indexPath)
+        guard chats.count > 0 else { return }
+        let chatItem = chats[indexPath.row]
+        delegate?.userChatListControllerDidSelectChatItem(self, chatItem: chatItem)
     }
 }
 

@@ -17,7 +17,14 @@ class ChatLogController: MessagesViewController {
     weak var delegate: ChatLogControllerDelegate?
     
     var chatDetails: Chat!
-    var messages: [Message] = []
+    var messages: [Message] = [] {
+        didSet {
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                self.messagesCollectionView.reloadData()
+            }
+        }
+    }
     
     lazy var user = User(firstName: "Djordje",
                          lastName: "Ljubinkovic",
@@ -27,24 +34,36 @@ class ChatLogController: MessagesViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        messagesCollectionView.messagesDataSource = self
-        messagesCollectionView.messagesLayoutDelegate = self
-        messagesCollectionView.messagesDisplayDelegate = self
-        
+        setDelegates()
         title = chatDetails.title
+        
+        ChatService.getAllMessages(for: chatDetails) { result in
+            switch result {
+            case .success(let messages):
+                self.messages = messages
+            case .failure(let error):
+                print("LE ERROR:", error.localizedDescription)
+            }
+        }
         
         print("INSIDE USER CHAT LOG")
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        let testMessage = Message(text: "Lorem ipsum dolor sit amet...",
-                                  sender: Sender(id: user.email, displayName: user.fullName ?? user.username),
-                                  messageId: UUID().uuidString,
-                                  date: Date())
-        insertNewMessage(testMessage)
+    private func setDelegates() {
+        messagesCollectionView.messagesDataSource = self
+        messagesCollectionView.messagesLayoutDelegate = self
+        messagesCollectionView.messagesDisplayDelegate = self
     }
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//
+//        let testMessage = Message(text: "Lorem ipsum dolor sit amet...",
+//                                  sender: Sender(id: user.email, displayName: user.fullName ?? user.username),
+//                                  messageId: UUID().uuidString,
+//                                  date: Date())
+//        insertNewMessage(testMessage)
+//    }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         delegate?.chatLogControllerDidPressSendMessage(self)
@@ -83,16 +102,19 @@ extension ChatLogController {
     }
 }
 
-// Some global variables for the sake of the example. Using globals is not recommended!
-let sender = Sender(id: "any_unique_id", displayName: "Steven")
-
 extension ChatLogController: MessagesDataSource {
     func currentSender() -> Sender {
-        return sender
+//        let sender = Sender(id: "any_unique_id", displayName: "Steven")
+//        return sender
+        guard let currentUser = AuthManager.shared.currentUser else { return Sender(id: "-1", displayName: "-1") }
+        return Sender(id: currentUser.id,
+                      displayName: currentUser.username ?? currentUser.fullName ?? currentUser.email)
     }
     
     func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
-        return messages[indexPath.section]
+        let message = messages[indexPath.section]
+        
+        return message
     }
     
     func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {

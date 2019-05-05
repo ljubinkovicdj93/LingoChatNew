@@ -13,6 +13,7 @@
 		4B280AFD2247A60400E937DA /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B280AFC2247A60400E937DA /* Chat.storyboard */; };
 		4B280AFF2247A65B00E937DA /* ChatLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B280AFE2247A65B00E937DA /* ChatLogController.swift */; };
 		4B280B012247A70F00E937DA /* ChatCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B280B002247A70F00E937DA /* ChatCoordinator.swift */; };
+		4B2D4287226F9FCD004C908C /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2D4286226F9FCD004C908C /* Message.swift */; };
 		4B3E44EF226096E90085E0C5 /* JSONDecoder+decodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3E44EE226096E90085E0C5 /* JSONDecoder+decodeResponse.swift */; };
 		4B3E44F22260A3230085E0C5 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3E44F12260A3230085E0C5 /* LoginService.swift */; };
 		4B4E801B226F337600DB1D81 /* UIViewController+storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4E801A226F337600DB1D81 /* UIViewController+storyboard.swift */; };
@@ -43,16 +44,19 @@
 		4BEF16BB226CF607005FEBC7 /* DateFormatter+formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEF16BA226CF607005FEBC7 /* DateFormatter+formatting.swift */; };
 		4BEF16BD226CF662005FEBC7 /* Date+stringDateConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEF16BC226CF662005FEBC7 /* Date+stringDateConversion.swift */; };
 		4BFB13D42274FB5500A8736D /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFB13D32274FB5500A8736D /* AuthManager.swift */; };
-		EBBD6082A94BB24EABD1EE45 /* Pods_LingoChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A0D220B0D3CF256CE38487 /* Pods_LingoChat.framework */; };
+		4BFE0A072278950300D4D896 /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFE0A062278950300D4D896 /* ChatService.swift */; };
+		EA91DA227B40E6E5CE01A619 /* Pods_LingoChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7960059D8B6C01C4F2C0BF4C /* Pods_LingoChat.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B424ABBB6D40866774CC32E /* Pods-LingoChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LingoChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LingoChat/Pods-LingoChat.debug.xcconfig"; sourceTree = "<group>"; };
 		4B16173D226E60E900530874 /* String+iso8601Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+iso8601Date.swift"; sourceTree = "<group>"; };
 		4B1A7AD4225F3B48000F7F77 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4B280AFA2247A5F300E937DA /* UserChatListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserChatListController.swift; sourceTree = "<group>"; };
 		4B280AFC2247A60400E937DA /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		4B280AFE2247A65B00E937DA /* ChatLogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogController.swift; sourceTree = "<group>"; };
 		4B280B002247A70F00E937DA /* ChatCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCoordinator.swift; sourceTree = "<group>"; };
+		4B2D4286226F9FCD004C908C /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		4B3E44EE226096E90085E0C5 /* JSONDecoder+decodeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+decodeResponse.swift"; sourceTree = "<group>"; };
 		4B3E44F12260A3230085E0C5 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		4B4E801A226F337600DB1D81 /* UIViewController+storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+storyboard.swift"; sourceTree = "<group>"; };
@@ -85,9 +89,9 @@
 		4BEF16BA226CF607005FEBC7 /* DateFormatter+formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+formatting.swift"; sourceTree = "<group>"; };
 		4BEF16BC226CF662005FEBC7 /* Date+stringDateConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+stringDateConversion.swift"; sourceTree = "<group>"; };
 		4BFB13D32274FB5500A8736D /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
-		A48C09BC670132AB4BBF89A1 /* Pods-LingoChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LingoChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-LingoChat/Pods-LingoChat.release.xcconfig"; sourceTree = "<group>"; };
-		C3A0D220B0D3CF256CE38487 /* Pods_LingoChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LingoChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C5485BEAC418927F278783B0 /* Pods-LingoChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LingoChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LingoChat/Pods-LingoChat.debug.xcconfig"; sourceTree = "<group>"; };
+		4BFE0A062278950300D4D896 /* ChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
+		581252F467AC0B576E8D9639 /* Pods-LingoChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LingoChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-LingoChat/Pods-LingoChat.release.xcconfig"; sourceTree = "<group>"; };
+		7960059D8B6C01C4F2C0BF4C /* Pods_LingoChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LingoChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBBD6082A94BB24EABD1EE45 /* Pods_LingoChat.framework in Frameworks */,
+				EA91DA227B40E6E5CE01A619 /* Pods_LingoChat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +121,7 @@
 				4B1A7AD4225F3B48000F7F77 /* User.swift */,
 				4B78521D225F844900688C75 /* Token.swift */,
 				4BEF16B8226CEF97005FEBC7 /* Chat.swift */,
+				4B2D4286226F9FCD004C908C /* Message.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -153,6 +158,7 @@
 				4B3E44F12260A3230085E0C5 /* LoginService.swift */,
 				4B982686226498B000F02591 /* RegisterService.swift */,
 				4B7179F6226A403F00087781 /* UserService.swift */,
+				4BFE0A062278950300D4D896 /* ChatService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -277,8 +283,8 @@
 			children = (
 				4BC67933224586CB0006236E /* LingoChat */,
 				4BC67932224586CB0006236E /* Products */,
-				9AEF19A03474AB32784A6292 /* Pods */,
-				6D19815DF6688FCF2B9B917C /* Frameworks */,
+				7298A8C64441C12D526EB494 /* Pods */,
+				F81EA49232D781F1B16CC4DF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -340,21 +346,21 @@
 			path = Formatter;
 			sourceTree = "<group>";
 		};
-		6D19815DF6688FCF2B9B917C /* Frameworks */ = {
+		7298A8C64441C12D526EB494 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C3A0D220B0D3CF256CE38487 /* Pods_LingoChat.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		9AEF19A03474AB32784A6292 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C5485BEAC418927F278783B0 /* Pods-LingoChat.debug.xcconfig */,
-				A48C09BC670132AB4BBF89A1 /* Pods-LingoChat.release.xcconfig */,
+				0B424ABBB6D40866774CC32E /* Pods-LingoChat.debug.xcconfig */,
+				581252F467AC0B576E8D9639 /* Pods-LingoChat.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		F81EA49232D781F1B16CC4DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7960059D8B6C01C4F2C0BF4C /* Pods_LingoChat.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,11 +370,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4BC67943224586CD0006236E /* Build configuration list for PBXNativeTarget "LingoChat" */;
 			buildPhases = (
-				5A4535D45AFC0A5B2ECD6772 /* [CP] Check Pods Manifest.lock */,
+				3D559725D7B283381131E32B /* [CP] Check Pods Manifest.lock */,
 				4BC6792D224586CB0006236E /* Sources */,
 				4BC6792E224586CB0006236E /* Frameworks */,
 				4BC6792F224586CB0006236E /* Resources */,
-				D55E4869D6879D44F1546591 /* [CP] Embed Pods Frameworks */,
+				57B023B1D804DEB2F9FD1D44 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -427,7 +433,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5A4535D45AFC0A5B2ECD6772 /* [CP] Check Pods Manifest.lock */ = {
+		3D559725D7B283381131E32B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -449,7 +455,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D55E4869D6879D44F1546591 /* [CP] Embed Pods Frameworks */ = {
+		57B023B1D804DEB2F9FD1D44 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -462,6 +468,8 @@
 				"${BUILT_PRODUCTS_DIR}/Bond/Bond.framework",
 				"${BUILT_PRODUCTS_DIR}/Differ/Differ.framework",
 				"${BUILT_PRODUCTS_DIR}/JWTDecode/JWTDecode.framework",
+				"${BUILT_PRODUCTS_DIR}/MessageInputBar/MessageInputBar.framework",
+				"${BUILT_PRODUCTS_DIR}/MessageKit/MessageKit.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveKit/ReactiveKit.framework",
 			);
@@ -473,6 +481,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bond.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differ.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JWTDecode.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageInputBar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveKit.framework",
 			);
@@ -495,12 +505,14 @@
 				4B280B012247A70F00E937DA /* ChatCoordinator.swift in Sources */,
 				4B55D80F2246CAA300364295 /* AuthenticationCoordinator.swift in Sources */,
 				4BC6795322459E990006236E /* StoryboardIdentifiable.swift in Sources */,
+				4BFE0A072278950300D4D896 /* ChatService.swift in Sources */,
 				4BC67935224586CB0006236E /* AppDelegate.swift in Sources */,
 				4B982687226498B000F02591 /* RegisterService.swift in Sources */,
 				4B4E801E226F369F00DB1D81 /* DataResponse+handleNetworkResponse.swift in Sources */,
 				4B1A7AD5225F3B48000F7F77 /* User.swift in Sources */,
 				4BC679482245923B0006236E /* Coordinator.swift in Sources */,
 				4B4E801B226F337600DB1D81 /* UIViewController+storyboard.swift in Sources */,
+				4B2D4287226F9FCD004C908C /* Message.swift in Sources */,
 				4B16173E226E60E900530874 /* String+iso8601Date.swift in Sources */,
 				4B55D7FF22466CE400364295 /* ModalNavigationRouter.swift in Sources */,
 				4B784D64225F6FF000688C75 /* RouterProtocol.swift in Sources */,
@@ -663,7 +675,7 @@
 		};
 		4BC67944224586CD0006236E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C5485BEAC418927F278783B0 /* Pods-LingoChat.debug.xcconfig */;
+			baseConfigurationReference = 0B424ABBB6D40866774CC32E /* Pods-LingoChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -682,7 +694,7 @@
 		};
 		4BC67945224586CD0006236E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A48C09BC670132AB4BBF89A1 /* Pods-LingoChat.release.xcconfig */;
+			baseConfigurationReference = 581252F467AC0B576E8D9639 /* Pods-LingoChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -6,7 +6,11 @@
 import Foundation
 import ObjectMapper
 
-struct User: Codable {
+protocol FullNameRepresentable {
+    var fullName: String? { get }
+}
+
+struct User: Codable, FullNameRepresentable {
     var id: UUID?
     var email: String
     var password: String
@@ -16,14 +20,15 @@ struct User: Codable {
     var photoUrl: String?
     var friendCount: Int?
     
+    var fullName: String? {
+        guard !firstName.isEmpty && !lastName.isEmpty else { return nil }
+        
+        return "\(firstName.capitalized) \(lastName.capitalized)"
+    }
+    
     var credentials: User.Credentials {
         guard !self.email.isEmpty, !self.password.isEmpty else { fatalError("Cannot get credentials!") }
         return User.Credentials(email: self.email, password: self.password)
-    }
-    
-    var fullName: String {
-        guard !firstName.isEmpty, !lastName.isEmpty else { return "" }
-        return "\(firstName) + \(lastName)"
     }
     
     init(firstName: String, lastName: String, email: String, password: String, username: String) {
@@ -34,7 +39,9 @@ struct User: Codable {
         self.username = username
     }
     
-    struct Public: Codable, Mappable {
+    /// Public representation of the User struct.
+    /// Public is a class since we are caching it to get the current user.
+    struct Public: Codable, Mappable, FullNameRepresentable {
         var id: String!
         var email: String!
         var username: String?
@@ -42,6 +49,12 @@ struct User: Codable {
         var lastName: String!
         var photoUrl: String?
         var friendCount: Int?
+        
+        var fullName: String? {
+            guard !firstName.isEmpty && !lastName.isEmpty else { return nil }
+            
+            return "\(firstName.capitalized) \(lastName.capitalized)"
+        }
         
         enum CodingKeys: String, CodingKey {
             case id

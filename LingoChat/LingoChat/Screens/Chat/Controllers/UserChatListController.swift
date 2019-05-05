@@ -8,43 +8,51 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 protocol UserChatListControllerDelegate: class {
-    func userChatListControllerDidSelectChatItem(_ viewController: UserChatListController, at indexPath: IndexPath)
+    func userChatListControllerDidSelectChatItem(_ viewController: UserChatListController, chatItem: Chat)
 }
 
 class UserChatListController: UICollectionViewController {
 
     weak var delegate: UserChatListControllerDelegate?
     
+    var token: Token?
+    private var chats: [Chat] = [] {
+        didSet {
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                self.collectionView.reloadData()
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        guard let currentUserId = AuthManager.shared.currentUser?.id else { return }
+         
+        UserService.getChats(for: currentUserId) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let chats):
+                self.chats = chats
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
         
         print("INSIDE USER CHAT LIST")
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
     }
-
+    
     // MARK: UICollectionViewDataSource
-
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 5
+        return chats.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
+        
         // Configure the cell
         cell.backgroundColor = .red
         
@@ -52,7 +60,9 @@ class UserChatListController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate?.userChatListControllerDidSelectChatItem(self, at: indexPath)
+        guard chats.count > 0 else { return }
+        let chatItem = chats[indexPath.row]
+        delegate?.userChatListControllerDidSelectChatItem(self, chatItem: chatItem)
     }
 }
 

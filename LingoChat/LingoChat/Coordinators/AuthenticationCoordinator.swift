@@ -41,9 +41,9 @@ class AuthenticationCoordinator: Coordinator {
 
 // MARK: - LoginControllerDelegate
 extension AuthenticationCoordinator: LoginControllerDelegate {
-    func loginControllerDidPressLogIn(_ viewController: LoginController, with credentials: User.Credentials) {
+    func loginControllerDidPressLogIn(_ viewController: LoginController, with user: User) {
         print("Login tapped")
-        LoginService.login(credentials: credentials) { result in
+        LoginService.login(user: user) { result in
             switch result {
             case .success(let token):
                 self.presentChatCoordinator(parent: viewController, token: token)

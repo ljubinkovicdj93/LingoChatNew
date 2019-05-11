@@ -10,51 +10,51 @@ protocol FullNameRepresentable {
     var fullName: String? { get }
 }
 
-struct User: Codable, FullNameRepresentable {
-    var id: UUID?
-    var email: String
-    var password: String
-    var username: String
-    var firstName: String
-    var lastName: String
-    var photoUrl: String?
+struct User: Codable {
+    private(set) var id: UUID?
+    var email: String?
+    var password: String?
+    var username: String?
+    var firstName: String?
+    var lastName: String?
+    var photoUrl: URL?
     var friendCount: Int?
     
-    var fullName: String? {
-        guard !firstName.isEmpty && !lastName.isEmpty else { return nil }
+    var base64EncodedCredentials: String? {
+        guard let userEmail = self.email,
+            let userPassword = self.password
+            else { return nil }
         
-        return "\(firstName.capitalized) \(lastName.capitalized)"
+        guard let credentialData = "\(userEmail):\(userPassword)".data(using: String.Encoding.utf8) else {
+            return nil
+        }
+        let base64Credentials = credentialData.base64EncodedString(options: [])
+        return base64Credentials
     }
     
-    var credentials: User.Credentials {
-        guard !self.email.isEmpty, !self.password.isEmpty else { fatalError("Cannot get credentials!") }
-        return User.Credentials(email: self.email, password: self.password)
-    }
-    
-    init(firstName: String, lastName: String, email: String, password: String, username: String) {
-        self.firstName = firstName
-        self.lastName = lastName
+    init(email: String, password: String) {
         self.email = email
         self.password = password
+    }
+    
+    init(email: String, password: String, firstName: String, lastName: String, username: String, photoUrl: URL? = nil) {
+        self.init(email: email, password: password)
+        self.firstName = firstName.capitalized
+        self.lastName = lastName.capitalized
         self.username = username
+        self.photoUrl = photoUrl
     }
     
     /// Public representation of the User struct.
     /// Public is a class since we are caching it to get the current user.
-    struct Public: Codable, Mappable, FullNameRepresentable {
-        var id: String!
-        var email: String!
+    struct Public: Codable, Mappable {
+        private(set) var id: String?
+        var email: String?
         var username: String?
-        var firstName: String!
-        var lastName: String!
+        var firstName: String?
+        var lastName: String?
         var photoUrl: String?
         var friendCount: Int?
-        
-        var fullName: String? {
-            guard !firstName.isEmpty && !lastName.isEmpty else { return nil }
-            
-            return "\(firstName.capitalized) \(lastName.capitalized)"
-        }
         
         enum CodingKeys: String, CodingKey {
             case id
@@ -91,17 +91,36 @@ struct User: Codable, FullNameRepresentable {
             friendCount <- map["friendCount"]
         }
     }
-    
-    struct Credentials: Encodable {
-        var email: String
-        var password: String
+}
+
+extension User: FullNameRepresentable {
+    var fullName: String? {
+        var fullNameArray = [String]()
         
-        var base64EncodedCredentials: String? {
-            guard let credentialData = "\(self.email):\(self.password)".data(using: String.Encoding.utf8) else {
-                return nil
-            }
-            let base64Credentials = credentialData.base64EncodedString(options: [])
-            return base64Credentials
+        if !self.firstName.isNilOrEmpty() {
+            fullNameArray.append(self.firstName!)
         }
+        
+        if !self.lastName.isNilOrEmpty() {
+            fullNameArray.append(self.lastName!)
+        }
+        
+        return fullNameArray.isEmpty ? nil : fullNameArray.joined(separator: " ")
+    }
+}
+
+extension User.Public: FullNameRepresentable {
+    var fullName: String? {
+        var fullNameArray = [String]()
+        
+        if !self.firstName.isNilOrEmpty() {
+            fullNameArray.append(self.firstName!)
+        }
+        
+        if !self.lastName.isNilOrEmpty() {
+            fullNameArray.append(self.lastName!)
+        }
+        
+        return fullNameArray.isEmpty ? nil : fullNameArray.joined(separator: " ")
     }
 }

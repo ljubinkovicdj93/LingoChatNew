@@ -37,13 +37,23 @@ class AuthenticationCoordinator: Coordinator {
         let loginController = LoginController.instantiate(delegate: self)
         router.present(loginController)
     }
+	
+	#warning("TODO: Finish")
+	private func transitionCoordinator(type: CoordinatorType) {
+//		switch type {
+//		case .login:
+//			self.presentLoginController()
+//		case .userChatList:
+//			self.presentChatCoordinator(parent: LoginController.instantiate(delegate: self), token: Token())
+//		}
+	}
 }
 
 // MARK: - LoginControllerDelegate
 extension AuthenticationCoordinator: LoginControllerDelegate {
-    func loginControllerDidPressLogIn(_ viewController: LoginController, with credentials: User.Credentials) {
+    func loginControllerDidPressLogIn(_ viewController: LoginController, with user: User) {
         print("Login tapped")
-        LoginService.login(credentials: credentials) { result in
+        LoginService.login(user: user) { result in
             switch result {
             case .success(let token):
                 self.presentChatCoordinator(parent: viewController, token: token)

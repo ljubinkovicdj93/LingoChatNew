@@ -4,7 +4,6 @@
 // Copyright © 2019 Dorde Ljubinkovic. All rights reserved.
 
 import UIKit
-import JWTDecode
 
 class ChatCoordinator: Coordinator {
     // MARK: - Properties
@@ -22,7 +21,6 @@ class ChatCoordinator: Coordinator {
     // MARK: - Coordinator methods
     func present(animated: Bool, onDismissed: (() -> Void)?) {
         let userChatListController = UserChatListController.instantiate(delegate: self)
-        userChatListController.token = token
         router.present(userChatListController)
     }
 }

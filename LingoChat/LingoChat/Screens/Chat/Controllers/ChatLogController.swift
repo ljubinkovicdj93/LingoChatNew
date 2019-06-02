@@ -26,10 +26,10 @@ class ChatLogController: MessagesViewController {
         }
     }
     
-    lazy var user = User(firstName: "Djordje",
-                         lastName: "Ljubinkovic",
-                         email: "djole@gmail.com",
+    lazy var user = User(email: "djole@gmail.com",
                          password: "Djole1993!",
+                         firstName: "Djordje",
+                         lastName: "Ljubinkovic",
                          username: "Le Djo")
     
     override func viewDidLoad() {
@@ -106,9 +106,12 @@ extension ChatLogController: MessagesDataSource {
     func currentSender() -> Sender {
 //        let sender = Sender(id: "any_unique_id", displayName: "Steven")
 //        return sender
-        guard let currentUser = AuthManager.shared.currentUser else { return Sender(id: "-1", displayName: "-1") }
-        return Sender(id: currentUser.id,
-                      displayName: currentUser.username ?? currentUser.fullName ?? currentUser.email)
+        guard let currentUser = AuthManager.shared.getCurrentUser(),
+            let currentUserId = currentUser.id
+            else { return Sender(id: "-1", displayName: "-1") }
+        
+        return Sender(id: currentUserId,
+                      displayName: currentUser.username ?? currentUser.fullName ?? currentUser.email ?? "")
     }
     
     func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {

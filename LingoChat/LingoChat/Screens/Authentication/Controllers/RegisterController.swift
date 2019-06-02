@@ -47,17 +47,17 @@ class RegisterController: UIViewController {
     
     // MARK: - Actions
     @IBAction func registerTapped(_ sender: Any) {
-        guard let firstName = firstNameTextField.text,
+        guard let email = emailTextField.text,
+            let password = passwordTextField.text,
+            let firstName = firstNameTextField.text,
             let lastName = lastNameTextField.text,
-            let username = usernameTextField.text,
-            let email = emailTextField.text,
-            let password = passwordTextField.text
+            let username = usernameTextField.text
         else { return }
         
-        let user = User(firstName: firstName,
-                        lastName: lastName,
-                        email: email,
+        let user = User(email: email,
                         password: password,
+                        firstName: firstName,
+                        lastName: lastName,
                         username: username)
         delegate?.registerControllerDidPressRegister(self, with: user)
     }

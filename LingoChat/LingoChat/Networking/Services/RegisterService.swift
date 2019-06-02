@@ -7,7 +7,7 @@ import Foundation
 import Alamofire
 
 final class RegisterService {
-    static func register(user: User, with completionHandler: @escaping (Result<Token>) -> Void) {
+    static func register(user: User, with completionHandler: @escaping (Swift.Result<Token, Error>) -> Void) {
         do {
             let userDictionary = try user.asDictionary()
             let registerRequest = NetworkRouter.RegisterRouter.create(parameters: userDictionary)
@@ -15,7 +15,14 @@ final class RegisterService {
                 switch result {
                 case .success(let token):
                     print("token:", token)
-                    try? AuthManager.shared.setCurrentUser(jwtToken: token.token)
+					LCKeychain.shared[.token] = token.jwtString
+					
+					do {
+						try AuthManager.shared.setCurrentUser(jwtString: token.jwtString)
+					} catch {
+						print(error)
+					}
+					
                     completionHandler(.success(token))
                 case .failure(let error):
                     print("error:", error.localizedDescription)

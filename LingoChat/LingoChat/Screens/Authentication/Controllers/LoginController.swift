@@ -8,7 +8,7 @@ import Bond
 import ReactiveKit
 
 protocol LoginControllerDelegate: class {
-    func loginControllerDidPressLogIn( _ viewController: LoginController, with credentials: User.Credentials)
+    func loginControllerDidPressLogIn( _ viewController: LoginController, with user: User)
     func loginControllerDidPressRegister(_ viewController: LoginController)
 }
 
@@ -39,7 +39,7 @@ class LoginController: UIViewController {
         guard let email = emailTextField.text,
             let password = passwordTextField.text
             else { return }
-        delegate?.loginControllerDidPressLogIn(self, with: User.Credentials(email: email, password: password))
+        delegate?.loginControllerDidPressLogIn(self, with: User(email: email, password: password))
     }
     
     @IBAction func registerTapped(_ sender: Any) {

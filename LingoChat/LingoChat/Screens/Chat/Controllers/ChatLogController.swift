@@ -106,7 +106,7 @@ extension ChatLogController: MessagesDataSource {
     func currentSender() -> Sender {
 //        let sender = Sender(id: "any_unique_id", displayName: "Steven")
 //        return sender
-        guard let currentUser = AuthManager.shared.currentUser,
+        guard let currentUser = AuthManager.shared.getCurrentUser(),
             let currentUserId = currentUser.id
             else { return Sender(id: "-1", displayName: "-1") }
         

@@ -37,6 +37,16 @@ class AuthenticationCoordinator: Coordinator {
         let loginController = LoginController.instantiate(delegate: self)
         router.present(loginController)
     }
+	
+	#warning("TODO: Finish")
+	private func transitionCoordinator(type: CoordinatorType) {
+//		switch type {
+//		case .login:
+//			self.presentLoginController()
+//		case .userChatList:
+//			self.presentChatCoordinator(parent: LoginController.instantiate(delegate: self), token: Token())
+//		}
+	}
 }
 
 // MARK: - LoginControllerDelegate

@@ -5,7 +5,6 @@
 
 import XCTest
 @testable import LingoChat
-import JWTDecode
 
 class UserTests: XCTestCase {
 

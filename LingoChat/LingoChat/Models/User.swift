@@ -4,7 +4,7 @@
 // Copyright © 2019 Dorde Ljubinkovic. All rights reserved.
 
 import Foundation
-import ObjectMapper
+import JWTHandler
 
 protocol FullNameRepresentable {
     var fullName: String? { get }
@@ -47,7 +47,17 @@ struct User: Codable {
     
     /// Public representation of the User struct.
     /// Public is a class since we are caching it to get the current user.
-    struct Public: Codable, Mappable {
+    class Public: NSObject, Codable, JWTClaimRepresentable {
+		// MARK: - JWTClaimRepresentable
+		
+		var aud: [String]?
+		var iss: String?
+		var sub: String?
+		var jti: String?
+		var exp: Date?
+		var nbf: Date?
+		var iat: Date?
+		
         private(set) var id: String?
         var email: String?
         var username: String?
@@ -64,11 +74,17 @@ struct User: Codable {
             case lastName
             case photoUrl
             case friendCount
+			
+			case aud
+			case iss
+			case sub
+			case jti
+			case exp
+			case nbf
+			case iat
         }
-        
-        init?(map: Map) {}
-        
-        init(from decoder: Decoder) throws {
+                
+		required init(from decoder: Decoder) throws {
             let values = try decoder.container(keyedBy: CodingKeys.self)
             self.id = try values.decode(String.self, forKey: .id)
             self.email = try values.decode(String.self, forKey: .email)
@@ -78,17 +94,14 @@ struct User: Codable {
             self.username = try values.decodeIfPresent(String.self, forKey: .username)
             self.photoUrl = try values.decodeIfPresent(String.self, forKey: .photoUrl)
             self.friendCount = try values.decodeIfPresent(Int.self, forKey: .friendCount)
-        }
-        
-        // MARK: - Mappable methods
-        mutating func mapping(map: Map) {
-            id <- map["id"]
-            email <- map["email"]
-            username <- map["username"]
-            firstName <- map["firstName"]
-            lastName <- map["lastName"]
-            photoUrl <- map["photoUrl"]
-            friendCount <- map["friendCount"]
+			
+			self.aud = try values.decodeIfPresent([String].self, forKey: .aud)
+			self.iss = try values.decodeIfPresent(String.self, forKey: .iss)
+			self.sub = try values.decodeIfPresent(String.self, forKey: .sub)
+			self.jti = try values.decodeIfPresent(String.self, forKey: .jti)
+			self.exp = try values.decodeIfPresent(Date.self, forKey: .exp)
+			self.nbf = try values.decodeIfPresent(Date.self, forKey: .nbf)
+			self.iat = try values.decodeIfPresent(Date.self, forKey: .iat)
         }
     }
 }

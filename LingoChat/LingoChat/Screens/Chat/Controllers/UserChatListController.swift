@@ -14,8 +14,7 @@ protocol UserChatListControllerDelegate: class {
 class UserChatListController: UICollectionViewController {
 
     weak var delegate: UserChatListControllerDelegate?
-    
-    var token: Token?
+	
     private var chats: [Chat] = [] {
         didSet {
             DispatchQueue.main.async { [weak self] in
@@ -27,7 +26,7 @@ class UserChatListController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let currentUserId = AuthManager.shared.currentUser?.id else { return }
+		guard let currentUserId = AuthManager.shared.getCurrentUser()?.id else { return }
          
         UserService.getChats(for: currentUserId) { [weak self] result in
             guard let self = self else { return }

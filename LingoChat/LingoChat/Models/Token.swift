@@ -6,22 +6,36 @@
 import Foundation
 import Security
 
-struct Token {
-    let id: UUID
-    var jwtString: JWTTokenRepresentable
-    var userID: UUID
-    
-    init(id: UUID, jwtString: JWTTokenRepresentable, userID: UUID) {
-        self.id = id
-        self.jwtString = jwtString
-        self.userID = userID
-    }
-    
-    enum TokenKeys: String, CodingKey {
-        case id
-        case jwtString = "token"
-        case userID
-    }
+struct Token: Codable {
+	let id: UUID
+	var jwtString: String
+	var userID: UUID
+	
+	enum TokenKeys: String, CodingKey {
+		case id
+		case jwtString = "token"
+		case userID
+	}
+	
+	init(id: UUID, jwtString: String, userID: UUID) {
+		self.id = id
+		self.jwtString = jwtString
+		self.userID = userID
+	}
+	
+	init(from decoder: Decoder) throws {
+		let values = try decoder.container(keyedBy: TokenKeys.self)
+		self.id = try values.decode(UUID.self, forKey: .id)
+		self.jwtString = try values.decode(String.self, forKey: .jwtString)
+		self.userID = try values.decode(UUID.self, forKey: .userID)
+	}
+	
+	func encode(to encoder: Encoder) throws {
+		var container = encoder.container(keyedBy: TokenKeys.self)
+		try container.encode(self.id, forKey: .id)
+		try container.encode(self.jwtString, forKey: .jwtString)
+		try container.encode(self.userID, forKey: .userID)
+	}
 }
 
 //// MARK: JWTDecoder
@@ -29,7 +43,7 @@ struct Token {
 //    func encodeJWT(_ jwtToken: JWTTokenRepresentable) throws {
 //        throw TokenError.unableToEncode
 //    }
-//    
+//
 //    func decodeJWTString(_ jwtString: String) throws -> JWTTokenRepresentable {
 //        do {
 //            print("")
@@ -40,7 +54,7 @@ struct Token {
 //            throw TokenError.invalidJWTToken
 //        }
 //    }
-//    
+//
 //    func getJWT() throws -> JWTTokenRepresentable {
 //        do {
 //            print("")

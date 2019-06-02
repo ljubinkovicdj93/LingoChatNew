@@ -7,7 +7,7 @@ import Foundation
 import Alamofire
 
 final class LoginService {
-    static func login(user: User, with completionHandler: @escaping (Result<Token>) -> Void) {
+    static func login(user: User, with completionHandler: @escaping (Swift.Result<Token, Error>) -> Void) {
         guard let base64Credentials = user.base64EncodedCredentials else { return }
         let headers = ["Authorization": "Basic \(base64Credentials)"]
         let loginRequest = NetworkRouter.LoginRouter.create(headers: headers)

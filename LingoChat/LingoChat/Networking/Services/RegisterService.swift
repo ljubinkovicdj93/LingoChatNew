@@ -7,7 +7,7 @@ import Foundation
 import Alamofire
 
 final class RegisterService {
-    static func register(user: User, with completionHandler: @escaping (Result<Token>) -> Void) {
+    static func register(user: User, with completionHandler: @escaping (Swift.Result<Token, Error>) -> Void) {
         do {
             let userDictionary = try user.asDictionary()
             let registerRequest = NetworkRouter.RegisterRouter.create(parameters: userDictionary)

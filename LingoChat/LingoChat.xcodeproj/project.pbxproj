@@ -34,6 +34,7 @@
 		4B8F804B2286EAAC0010459F /* LCKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8F804A2286EAAC0010459F /* LCKeychain.swift */; };
 		4B95157F22A3F55200E85229 /* JWTHandler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B95157E22A3F4E700E85229 /* JWTHandler.framework */; };
 		4B95158022A3F55200E85229 /* JWTHandler.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B95157E22A3F4E700E85229 /* JWTHandler.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4B9517F422A3FDA700E85229 /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9517F322A3FDA700E85229 /* APIClientTests.swift */; };
 		4B982685226496F100F02591 /* Encodable+asDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B982684226496F100F02591 /* Encodable+asDictionary.swift */; };
 		4B982687226498B000F02591 /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B982686226498B000F02591 /* RegisterService.swift */; };
 		4B98268A22649B1D00F02591 /* OptionalString+isNilOrEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B98268922649B1D00F02591 /* OptionalString+isNilOrEmpty.swift */; };
@@ -121,6 +122,7 @@
 		4B78521D225F844900688C75 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		4B8F804A2286EAAC0010459F /* LCKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCKeychain.swift; sourceTree = "<group>"; };
 		4B95157922A3F4E700E85229 /* JWTHandler.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JWTHandler.xcodeproj; path = ../JWTHandler/JWTHandler.xcodeproj; sourceTree = "<group>"; };
+		4B9517F322A3FDA700E85229 /* APIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
 		4B982684226496F100F02591 /* Encodable+asDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+asDictionary.swift"; sourceTree = "<group>"; };
 		4B982686226498B000F02591 /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
 		4B98268922649B1D00F02591 /* OptionalString+isNilOrEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OptionalString+isNilOrEmpty.swift"; sourceTree = "<group>"; };
@@ -342,6 +344,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		4B9517F222A3FD8800E85229 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				4B9517F322A3FDA700E85229 /* APIClientTests.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		4B98268822649B0200F02591 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -425,6 +435,7 @@
 		4BCC072F227F624A0002C615 /* LingoChatTests */ = {
 			isa = PBXGroup;
 			children = (
+				4B9517F222A3FD8800E85229 /* API */,
 				4BCC0732227F624A0002C615 /* Info.plist */,
 				4BCC073C227F62920002C615 /* Model */,
 			);
@@ -699,6 +710,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B9517F422A3FDA700E85229 /* APIClientTests.swift in Sources */,
 				4BCC0739227F627A0002C615 /* UserTests.swift in Sources */,
 				4BCC073B227F628B0002C615 /* TokenTests.swift in Sources */,
 			);

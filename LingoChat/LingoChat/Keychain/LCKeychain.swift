@@ -22,6 +22,17 @@ protocol KeychainRepresentable {
 	subscript(key: KeychainKeys) -> Value? { get set }
 }
 
+extension KeychainRepresentable {
+	subscript(key: KeychainKeys) -> Value? {
+		get { return self.findValue(for: key) }
+		set {
+			DispatchQueue.global().sync(flags: .barrier) {
+				self.saveValue(newValue, for: key)
+			}
+		}
+	}
+}
+
 class LCKeychain: KeychainRepresentable {
 	
 	private init() {}
@@ -75,15 +86,6 @@ class LCKeychain: KeychainRepresentable {
 //	func updateValue(_ value: String?, for key: LCKeychainKey) {
 //		<#code#>
 //	}
-	
-	subscript(key: LCKeychainKey) -> String? {
-		get { return self.findValue(for: key) }
-		set {
-			DispatchQueue.global().sync(flags: .barrier) {
-				self.saveValue(newValue, for: key)
-			}
-		}
-	}
 	
 	private func keychainQuery(withKey key: LCKeychainKey) -> NSMutableDictionary {
 		let result = NSMutableDictionary()
